@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lemon Tattoo - Tatouages Qui Font Tourner Les Têtes</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -19,7 +21,7 @@
         
         <ul class="navbar-menu">
             <li class="navbar-item"><a href="#" class="navbar-link">Accueil</a></li>
-            <li class="navbar-item"><a href="#" class="navbar-link">Portfolio</a></li>
+            <li class="navbar-item"><a href="#portfolio" class="navbar-link">Portfolio</a></li>
             <li class="navbar-item"><a href="#" class="navbar-link">Services</a></li>
             <li class="navbar-item"><a href="#" class="navbar-link">À Propos</a></li>
             <li class="navbar-item"><a href="#" class="navbar-link">Contact</a></li>
@@ -51,13 +53,267 @@
         <div class="hero-content">
             <h1 class="hero-title">Tatouages Qui Font <span class="highlighted-word">Tourner</span> Les Têtes</h1>
             <p class="hero-subtitle">Votre peau mérite mieux qu'un stabilo 🍋</p>
-            <a href="#" class="hero-cta-button">Voir nos œuvres</a>
+            <a href="#portfolio" class="hero-cta-button">Voir nos œuvres</a>
             <div class="reviews-stats">
                 ★★★★★ 5.0 • +70 avis clients satisfaits <img src="logo/googleG.webp" alt="Google" class="google-icon">
             </div>
         </div>
+
+        <!-- Animated Scroll Arrow -->
+        <div class="scroll-arrow">
+            <svg width="120" height="120" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        /* Bouncing animation for the arrow */
+                        .arrow-group {
+                            animation: bounce 2s ease-in-out infinite;
+                            transform-origin: center;
+                        }
+
+                        @keyframes bounce {
+                            0%, 100% {
+                                transform: translateY(0);
+                            }
+                            50% {
+                                transform: translateY(-15px);
+                            }
+                        }
+                    </style>
+                </defs>
+
+                <!-- Arrow Group -->
+                <g class="arrow-group">
+                    <!-- Main arrow with hand-drawn style -->
+                    <g>
+                        <!-- Arrow shaft with rough edges -->
+                        <path d="
+                            M 100 25
+                            C 98 27, 102 30, 100 35
+                            L 99 40
+                            C 101 43, 98 47, 100 50
+                            L 101 55
+                            C 99 58, 102 62, 100 65
+                            L 99 70
+                            C 101 73, 98 77, 100 80
+                            L 101 85
+                            C 99 88, 102 92, 100 95
+                            L 99 100
+                            C 101 103, 98 107, 100 110
+                            L 100 115
+                            
+                            M 65 85
+                            C 68 88, 72 92, 78 98
+                            L 85 105
+                            C 88 108, 92 112, 95 115
+                            L 100 120
+                            L 105 115
+                            C 108 112, 112 108, 115 105
+                            L 122 98
+                            C 128 92, 132 88, 135 85
+                        " 
+                        stroke="#FFD900" 
+                        stroke-width="7" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"
+                        fill="none"
+                        />
+                        
+                        <!-- Additional rough strokes for texture -->
+                        <path d="
+                            M 98 30
+                            C 99 35, 101 40, 99 45
+                            M 101 50
+                            C 100 55, 98 60, 101 65
+                            M 99 70
+                            C 100 75, 102 80, 99 85
+                            M 97 90
+                            C 98 95, 100 100, 98 105
+                        " 
+                        stroke="#FFD900" 
+                        stroke-width="3" 
+                        stroke-linecap="round" 
+                        fill="none"
+                        opacity="0.5"
+                        />
+                        
+                        <!-- Arrow head details -->
+                        <path d="
+                            M 70 88
+                            C 72 90, 74 92, 76 94
+                            M 130 88
+                            C 128 90, 126 92, 124 94
+                        " 
+                        stroke="#FFD900" 
+                        stroke-width="4" 
+                        stroke-linecap="round" 
+                        fill="none"
+                        opacity="0.7"
+                        />
+                    </g>
+                </g>
+            </svg>
+        </div>
     </section>
+
+    <!-- Nos Œuvres Section -->
+    <section class="portfolio" id="portfolio">
+        <!-- Section Header -->
+        <div class="portfolio-header">
+            <h2 class="section-title">Nos <span class="highlighted-word-underline">Œuvres</span></h2>
+            <p class="section-subtitle">Découvrez les créations uniques de nos artistes tatoueurs</p>
+        </div>
+
+        <!-- Artist Tabs -->
+        <div class="artist-tabs">
+            <button class="artist-tab active" data-artist="all">
+                Tous les artistes
+            </button>
+            <button class="artist-tab" data-artist="vincent">
+                Vincent Shelby
+            </button>
+            <button class="artist-tab" data-artist="alex">
+                Alex Dubois
+            </button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Tattoo Item 1 -->
+            <div class="tattoo-item" data-artist="vincent">
+                <div class="sketchbook-page">
+                    <div class="page-corner"></div>
+                    <div class="polaroid">
+                        <div class="photo-frame">
+                            <img src="Art/tattoo1.webp" alt="Tatouage Minimaliste" loading="lazy">
+                            <button class="view-btn" data-img="Art/tattoo1.webp" data-title="Rose Minimaliste - Vincent">
+                                <span>👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lemon-doodle">🍋</div>
+                </div>
+            </div>
+
+            <!-- Tattoo Item 2 -->
+            <div class="tattoo-item" data-artist="alex">
+                <div class="sketchbook-page">
+                    <div class="page-corner"></div>
+                    <div class="polaroid">
+                        <div class="photo-frame">
+                            <div class="placeholder-photo">
+                                <span>🦋</span>
+                                <p>Butterfly Mandala</p>
+                            </div>
+                            <button class="view-btn" data-img="placeholder" data-title="Mandala Papillon - Alex">
+                                <span>👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ink-splash"></div>
+                </div>
+            </div>
+
+            <!-- Tattoo Item 3 -->
+            <div class="tattoo-item" data-artist="vincent">
+                <div class="sketchbook-page">
+                    <div class="page-corner"></div>
+                    <div class="polaroid">
+                        <div class="photo-frame">
+                            <div class="placeholder-photo">
+                                <span>🌙</span>
+                                <p>Luna Phase</p>
+                            </div>
+                            <button class="view-btn" data-img="placeholder" data-title="Phases Lunaires - Vincent">
+                                <span>👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="coffee-stain"></div>
+                </div>
+            </div>
+
+            <!-- Tattoo Item 4 -->
+            <div class="tattoo-item" data-artist="alex">
+                <div class="sketchbook-page">
+                    <div class="page-corner"></div>
+                    <div class="polaroid">
+                        <div class="photo-frame">
+                            <div class="placeholder-photo">
+                                <span>🐍</span>
+                                <p>Serpent Tribal</p>
+                            </div>
+                            <button class="view-btn" data-img="placeholder" data-title="Serpent Tribal - Alex">
+                                <span>👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lemon-doodle">🍋</div>
+                </div>
+            </div>
+
+            <!-- Tattoo Item 5 -->
+            <div class="tattoo-item" data-artist="vincent">
+                <div class="sketchbook-page">
+                    <div class="page-corner"></div>
+                    <div class="polaroid">
+                        <div class="photo-frame">
+                            <div class="placeholder-photo">
+                                <span>🦊</span>
+                                <p>Renard Aquarelle</p>
+                            </div>
+                            <button class="view-btn" data-img="placeholder" data-title="Renard Aquarelle - Vincent">
+                                <span>👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ink-splash"></div>
+                </div>
+            </div>
+
+            <!-- Tattoo Item 6 -->
+            <div class="tattoo-item" data-artist="alex">
+                <div class="sketchbook-page">
+                    <div class="page-corner"></div>
+                    <div class="polaroid">
+                        <div class="photo-frame">
+                            <div class="placeholder-photo">
+                                <span>⚓</span>
+                                <p>Ancre Marine</p>
+                            </div>
+                            <button class="view-btn" data-img="placeholder" data-title="Ancre Old School - Alex">
+                                <span>👁️</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="coffee-stain"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Show More Button -->
+        <div class="mobile-show-more" id="mobileShowMore">
+            <button class="show-more-btn" id="showMoreBtn">
+                Voir plus d'œuvres
+            </button>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="portfolio-cta">
+            <h3>Prêt pour votre prochain tatouage ?</h3>
+            <a href="#contact" class="cta-button">Prendre rendez-vous</a>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-title"></div>
+        </div>
+    </div>
     
     <script src="script.js"></script>
+    <script src="lenis-scroll.js"></script>
 </body>
 </html> 
