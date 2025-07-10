@@ -1,5 +1,6 @@
 /* Import fonts according to new requirements */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
 /* Reset and base styles */
 * {
@@ -279,7 +280,7 @@ body {
     position: absolute;
     left: 5vw;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-60%); /* Moved up from -50% */
     max-width: 600px;
     z-index: 5;
     text-align: left;
@@ -287,14 +288,14 @@ body {
 
 /* H1 - New styling according to instructions */
 .hero-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(2.3rem, 5.5vw, 4.2rem);
     font-weight: 900;
     color: #FFFFFF;
-    letter-spacing: 2px;
-    line-height: 1.3;
+    letter-spacing: -1px; /* Adjusted for new font */
+    line-height: 1.2; /* Adjusted for new font */
     margin-bottom: 1.5rem;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.9), 1px 1px 3px rgba(0,0,0,0.7);
+    text-shadow: none; /* Removed shadow for cleaner look */
     text-align: left;
     opacity: 0;
     animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
