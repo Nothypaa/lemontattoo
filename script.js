@@ -167,4 +167,128 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Contact form functionality
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = formData.get('name').trim();
+            const email = formData.get('email').trim();
+            const phone = formData.get('phone').trim();
+            const message = formData.get('message').trim();
+            const subjects = formData.getAll('subject');
+            
+            // Basic validation
+            if (!name || !email || !message) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Veuillez entrer une adresse email valide.');
+                return;
+            }
+            
+            if (subjects.length === 0) {
+                alert('Veuillez sélectionner au moins un sujet.');
+                return;
+            }
+            
+            // Get submit button
+            const submitBtn = contactForm.querySelector('.form-submit');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'ENVOI EN COURS...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual form handling)
+            setTimeout(() => {
+                // Show success message
+                alert('Merci pour votre message ! Nous vous recontacterons rapidement.');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                
+                // Optional: scroll to top of contact section
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 2000);
+        });
+        
+        // Add real-time validation
+        const inputs = contactForm.querySelectorAll('.form-input, .form-textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            input.addEventListener('input', function() {
+                // Remove error styling on input
+                this.style.borderColor = '';
+            });
+        });
+        
+        function validateField(field) {
+            const value = field.value.trim();
+            const fieldType = field.type;
+            
+            if (field.hasAttribute('required') && !value) {
+                showFieldError(field, 'Ce champ est obligatoire.');
+                return false;
+            }
+            
+            if (fieldType === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    showFieldError(field, 'Adresse email invalide.');
+                    return false;
+                }
+            }
+            
+            // Clear any existing error
+            clearFieldError(field);
+            return true;
+        }
+        
+        function showFieldError(field, message) {
+            field.style.borderColor = '#ff4444';
+            
+            // Remove existing error message
+            clearFieldError(field);
+            
+            // Create and append error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'field-error';
+            errorDiv.textContent = message;
+            errorDiv.style.color = '#ff4444';
+            errorDiv.style.fontSize = '0.85rem';
+            errorDiv.style.marginTop = '0.25rem';
+            
+            field.parentNode.appendChild(errorDiv);
+        }
+        
+        function clearFieldError(field) {
+            const existingError = field.parentNode.querySelector('.field-error');
+            if (existingError) {
+                existingError.remove();
+            }
+        }
+    }
+    
 }); 
