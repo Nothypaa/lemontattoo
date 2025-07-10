@@ -76,6 +76,30 @@ body {
     position: relative;
 }
 
+.navbar-menu .navbar-menu-enter:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.navbar-menu .navbar-menu-enter:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.navbar-menu .navbar-menu-enter:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.navbar-menu .navbar-menu-enter:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+.navbar-menu .navbar-menu-enter:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.navbar-menu .navbar-menu-enter:nth-child(6) {
+  animation-delay: 0.9s;
+}
+
 .navbar-link {
     color: #ffffff;
     text-decoration: none;
@@ -186,6 +210,30 @@ body {
 
 .hamburger.active .hamburger-line:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Entrance animation classes */
+.navbar-logo-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: enterSlideLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+}
+
+.navbar-menu-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: enterFadeInDown 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.navbar-social-enter {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: enterSlideRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
+}
+
+.hamburger-enter {
+  opacity: 0;
+  animation: enterFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s both;
 }
 
 /* Hero Section */
@@ -521,6 +569,35 @@ body {
         opacity: 1; 
         transform: translateY(0); 
     }
+}
+
+/* Add these entrance animation keyframes after the existing keyframes around line 500 or at an appropriate place in the file */
+
+@keyframes enterSlideLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterSlideRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes enterFadeInDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes enterFadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Mobile Navigation */
@@ -1231,6 +1308,325 @@ body {
         max-height: 70vh;
     }
 } 
+
+/* About Us Timeline Section */
+.about-timeline {
+    position: relative;
+    background: #1a1a1a;
+    padding: 100px 5vw 80px; /* Reduced padding */
+    overflow: hidden;
+}
+
+/* Section Header */
+.timeline-header {
+    text-align: center;
+    margin-bottom: 80px; /* Reduced margin */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Timeline Container */
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Central Timeline Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #FFD700;
+    transform: translateX(-50%);
+    z-index: 1;
+    opacity: 0;
+    animation: drawTimelineLine 1.5s ease-out 0.5s forwards;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px; /* Reduced margin */
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeInUpTimeline 0.8s ease-out forwards;
+    z-index: 2; /* Ensures item is above the line */
+}
+
+.timeline-item:nth-child(2) { animation-delay: 0.8s; }
+.timeline-item:nth-child(3) { animation-delay: 1.2s; }
+.timeline-item:nth-child(4) { animation-delay: 1.6s; }
+
+/* Timeline Year Circles */
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 80px;
+    height: 80px;
+    background: #FFD700;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    animation: bounceInYear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.timeline-item:nth-child(2) .timeline-year { animation-delay: 0.9s; }
+.timeline-item:nth-child(3) .timeline-year { animation-delay: 1.3s; }
+.timeline-item:nth-child(4) .timeline-year { animation-delay: 1.7s; }
+
+.timeline-year span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+/* Timeline Cards become image containers */
+.timeline-card {
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    max-width: 450px; /* Adjusted width */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-10px);
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* Left Positioned Items */
+.timeline-left {
+    justify-content: flex-start;
+}
+
+.timeline-left .timeline-card {
+    margin-right: 80px; /* Reduced margin */
+}
+
+.timeline-left .timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -80px; /* Match margin */
+    width: 80px; /* Match margin */
+    height: 2px;
+    background: #FFD700;
+    transform: translateY(-50%);
+}
+
+/* Right Positioned Items */
+.timeline-right {
+    justify-content: flex-end;
+}
+
+.timeline-right .timeline-card {
+    margin-left: 80px; /* Reduced margin */
+}
+
+.timeline-right .timeline-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -80px; /* Match margin */
+    width: 80px; /* Match margin */
+    height: 2px;
+    background: #FFD700;
+    transform: translateY(-50%);
+}
+
+/* Timeline Images */
+.timeline-image {
+    margin-bottom: 0; /* Removed margin */
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners */
+    position: relative;
+}
+
+.timeline-image img {
+    width: 100%;
+    height: auto; /* Show full image */
+    object-fit: contain; /* Show full image */
+    border-radius: 15px; /* Match container radius */
+    display: block; /* Remove bottom space */
+    transition: transform 0.3s ease;
+}
+
+.timeline-card:hover .timeline-image img {
+    transform: scale(1.05);
+}
+
+/* Remove text styles */
+.timeline-content {
+    display: none;
+}
+
+.timeline-title {
+    display: none;
+}
+
+.timeline-description {
+    display: none;
+}
+
+/* Keyframe Animations */
+@keyframes drawTimelineLine {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+@keyframes fadeInUpTimeline {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceInYear {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .about-timeline {
+        padding: 80px 4vw 60px;
+    }
+    
+    .timeline-header {
+        margin-bottom: 60px;
+    }
+    
+    .timeline-container {
+        padding: 0 10px;
+    }
+    
+    .timeline-line {
+        left: 30px;
+        transform: none;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 80px;
+        padding-left: 80px;
+    }
+    
+    .timeline-year {
+        left: 30px;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+    }
+    
+    .timeline-year span {
+        font-size: 0.9rem;
+    }
+    
+    .timeline-left,
+    .timeline-right {
+        justify-content: flex-start;
+    }
+    
+    .timeline-left .timeline-card,
+    .timeline-right .timeline-card {
+        margin: 0;
+        max-width: none;
+        width: 100%;
+    }
+    
+    .timeline-left .timeline-card::after,
+    .timeline-right .timeline-card::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        width: 50px;
+        height: 2px;
+        background: #FFD700;
+        border: none;
+        transform: translateY(-50%);
+    }
+    
+    .timeline-image img {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-timeline {
+        padding: 60px 3vw 40px;
+    }
+    
+    .timeline-header {
+        margin-bottom: 40px;
+    }
+    
+    .timeline-item {
+        margin-bottom: 60px;
+        padding-left: 60px;
+    }
+    
+    .timeline-year {
+        width: 50px;
+        height: 50px;
+        left: 25px;
+    }
+    
+    .timeline-year span {
+        font-size: 0.8rem;
+    }
+    
+    .timeline-line {
+        left: 25px;
+        width: 3px;
+    }
+    
+    .timeline-card {
+        padding: 0;
+    }
+    
+    .timeline-image img {
+        height: auto;
+    }
+}
 
 /* Contact Section */
 .contact {

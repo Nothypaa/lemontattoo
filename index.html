@@ -12,7 +12,7 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="navbar-logo">
+        <div class="navbar-logo navbar-logo-enter">
             <a href="#" class="logo-link">
                 <img src="logo/lemonlogo.png" alt="Lemon Tattoo Logo" class="navbar-logo-img">
                 Lemon Tattoo
@@ -20,18 +20,18 @@
         </div>
         
         <ul class="navbar-menu">
-            <li class="navbar-item"><a href="#" class="navbar-link">Accueil</a></li>
-            <li class="navbar-item"><a href="#portfolio" class="navbar-link">Portfolio</a></li>
-            <li class="navbar-item"><a href="#" class="navbar-link">Services</a></li>
-            <li class="navbar-item"><a href="#" class="navbar-link">À Propos</a></li>
-            <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
-            <li class="navbar-item mobile-cta-item">
+            <li class="navbar-item navbar-menu-enter"><a href="#" class="navbar-link">Accueil</a></li>
+            <li class="navbar-item navbar-menu-enter"><a href="#portfolio" class="navbar-link">Portfolio</a></li>
+            <li class="navbar-item navbar-menu-enter"><a href="#" class="navbar-link">Services</a></li>
+            <li class="navbar-item navbar-menu-enter"><a href="#about" class="navbar-link">À Propos</a></li>
+            <li class="navbar-item navbar-menu-enter"><a href="#contact" class="navbar-link">Contact</a></li>
+            <li class="navbar-item mobile-cta-item navbar-menu-enter">
                 <a href="#" class="navbar-cta">Réserver</a>
             </li>
         </ul>
         
         <!-- Desktop Social Media Icons -->
-        <div class="navbar-social">
+        <div class="navbar-social navbar-social-enter">
             <a href="https://www.facebook.com/Lemontattooshop" target="_blank" rel="noopener noreferrer" class="navbar-social-icon" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" width="20" height="20">
                     <path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -44,7 +44,7 @@
             </a>
         </div>
         
-        <div class="hamburger">
+        <div class="hamburger hamburger-enter">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
@@ -312,6 +312,57 @@
         <div class="portfolio-cta">
             <h3>Prêt pour votre prochain tatouage ?</h3>
             <a href="#contact" class="cta-button">Prendre rendez-vous</a>
+        </div>
+    </section>
+
+    <!-- About Us Timeline Section -->
+    <section class="about-timeline" id="about">
+        <!-- Section Header -->
+        <div class="timeline-header">
+            <h2 class="section-title">Notre <span class="highlighted-word-underline">Histoire</span></h2>
+            <p class="section-subtitle">L'évolution de Lemon Tattoo depuis 2022</p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="timeline-container">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline Item 1 - 2022 -->
+            <div class="timeline-item timeline-left">
+                <div class="timeline-year">
+                    <span></span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="about-us/ouverture.jpg" alt="Ouverture Lemon Tattoo 2022">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 - 2023 -->
+            <div class="timeline-item timeline-right">
+                <div class="timeline-year">
+                    <span></span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="about-us/vincentworking.jpg" alt="Vincent travaillant en 2023">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 - 2024 -->
+            <div class="timeline-item timeline-left">
+                <div class="timeline-year">
+                    <span></span>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-image">
+                        <img src="about-us/insideshop.jpg" alt="Intérieur du salon en 2024">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
