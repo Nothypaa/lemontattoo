@@ -180,7 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = formData.get('email').trim();
             const phone = formData.get('phone').trim();
             const message = formData.get('message').trim();
-            const subjects = formData.getAll('subject');
             
             // Basic validation
             if (!name || !email || !message) {
@@ -192,11 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Veuillez entrer une adresse email valide.');
-                return;
-            }
-            
-            if (subjects.length === 0) {
-                alert('Veuillez sélectionner au moins un sujet.');
                 return;
             }
             
@@ -289,6 +283,62 @@ document.addEventListener('DOMContentLoaded', function() {
                 existingError.remove();
             }
         }
+    }
+    
+    // Phone field visibility functionality
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneGroup = document.getElementById('phoneGroup');
+    
+    if (nameInput && emailInput && phoneGroup) {
+        // Set initial state properly
+        phoneGroup.style.display = 'none';
+        phoneGroup.style.opacity = '0';
+        phoneGroup.style.transform = 'translateY(-10px)';
+        phoneGroup.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        function checkPhoneVisibility() {
+            const nameValue = nameInput.value.trim();
+            const emailValue = emailInput.value.trim();
+            
+            // Show phone field when both name and email have values
+            if (nameValue && emailValue) {
+                // First set display to flex to maintain proper form layout
+                phoneGroup.style.display = 'flex';
+                phoneGroup.style.opacity = '0';
+                phoneGroup.style.transform = 'translateY(-10px)';
+                
+                // Force reflow and then animate
+                phoneGroup.offsetHeight;
+                
+                setTimeout(() => {
+                    phoneGroup.style.opacity = '1';
+                    phoneGroup.style.transform = 'translateY(0)';
+                }, 50);
+            } else {
+                // Hide phone field with animation
+                phoneGroup.style.opacity = '0';
+                phoneGroup.style.transform = 'translateY(-10px)';
+                
+                setTimeout(() => {
+                    if (!nameValue || !emailValue) {
+                        phoneGroup.style.display = 'none';
+                    }
+                }, 400);
+            }
+        }
+        
+        // Add event listeners with debouncing for smoother experience
+        let timeout;
+        function debouncedCheck() {
+            clearTimeout(timeout);
+            timeout = setTimeout(checkPhoneVisibility, 100);
+        }
+        
+        nameInput.addEventListener('input', debouncedCheck);
+        nameInput.addEventListener('blur', checkPhoneVisibility);
+        emailInput.addEventListener('input', debouncedCheck);
+        emailInput.addEventListener('blur', checkPhoneVisibility);
     }
     
 }); 

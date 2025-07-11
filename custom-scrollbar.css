@@ -1,0 +1,55 @@
+
+/* custom-scrollbar.css - Dedicated styles for a custom scrollbar */
+
+/* General setup for thin scrollbar */
+html {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #FFD700 rgba(255,255,255,0.1); /* Thumb color (lemon yellow) and translucent track */
+}
+
+/* WebKit-specific styles (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Thinner than default */
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05); /* Translucent glass-like background */
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /* Inner shadow for depth */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #FFD700, #32CD32); /* Lemon yellow to lime green gradient */
+    border-radius: 10px;
+    border: 2px solid transparent; /* Adds padding effect */
+    background-clip: content-box;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3); /* Subtle glow */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #FFEA00, #228B22); /* Brighter on hover */
+    box-shadow: 0 0 10px rgba(255,215,0,0.5); /* Enhanced glow */
+}
+
+/* Corner styling for a polished look */
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Fallback for older browsers or unsupported */
+body {
+    overflow-y: scroll; /* Ensure scrollbar is always visible if needed */
+}
+
+/*
+Integration Guide:
+1. To use in the main website, add this link to your HTML head section:
+   <link rel="stylesheet" href="custom-scrollbar.css">
+
+2. This applies the scrollbar globally to the html element.
+   For specific elements (e.g., a div with overflow), add a class like .custom-scroll and duplicate the ::-webkit-scrollbar styles under .custom-scroll::-webkit-scrollbar { ... }
+
+3. Tested for WebKit (Chrome/Safari/Edge) and Firefox. For best results, use modern browsers.
+4. The design features a translucent glass track with a lemon-inspired gradient thumb that's thin, modern, and slightly animated on hover for an innovative touch.
+*/ 
