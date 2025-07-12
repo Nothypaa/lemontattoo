@@ -289,17 +289,17 @@ body {
 /* H1 - New styling according to instructions */
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.3rem, 5.5vw, 4.2rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
     color: #FFFFFF;
-    letter-spacing: -1px; /* Adjusted for new font */
-    line-height: 1.2; /* Adjusted for new font */
+    letter-spacing: -1px;
+    line-height: 1.2;
     margin-bottom: 1.5rem;
-    text-shadow: none; /* Removed shadow for cleaner look */
+    text-shadow: none;
     text-align: left;
     opacity: 0;
     animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
-    max-width: 900px;
+    max-width: 600px;
 }
 
 /* Highlighted word styling for hero section */
@@ -429,7 +429,7 @@ body {
     font-weight: 600;
     text-decoration: none;
     letter-spacing: 0.5px;
-    margin-top: 4.5rem;
+    margin-top: 3rem;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
@@ -448,10 +448,9 @@ body {
 .reviews-stats {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 0.5rem;
-    margin-top: 2.5rem;
-    margin-left: -0.5rem;
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     color: #FFD700;
@@ -461,8 +460,7 @@ body {
     transform: translateY(10px);
     animation: fadeInReviews 0.8s 2s both;
     text-align: left;
-    width: 100%;
-    max-width: 500px;
+    width: auto;
 }
 
 .google-icon {
@@ -682,14 +680,14 @@ body {
     .hero-cta-button {
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
-        margin-top: 3.5rem;
+        margin-top: 2.5rem;
         animation: fadeInUp 0.6s ease-out 1.5s both;
     }
     
     /* Mobile reviews adjustments */
     .reviews-stats {
         font-size: 0.8rem;
-        justify-content: flex-start;
+        margin-top: 1rem;
     }
 }
 
@@ -804,7 +802,7 @@ body {
 /* ===== PORTFOLIO SECTION ===== */
 
 .portfolio {
-    padding: 120px 5vw 80px;
+    padding: 120px 5vw 0px; /* Removed bottom padding for seamless flow */
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
     min-height: 100vh;
 }
@@ -1314,8 +1312,8 @@ body {
 /* About Us Timeline Section */
 .about-timeline {
     position: relative;
-    background: #1a1a1a;
-    padding: 100px 5vw 80px; /* Reduced padding */
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); /* Matching portfolio gradient */
+    padding: 80px 5vw 80px; /* Reduced top padding for seamless flow */
     overflow: hidden;
 }
 

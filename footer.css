@@ -1,0 +1,186 @@
+
+/* footer.css - Styles for Lemon Tattoo footer */
+
+footer {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%); /* Matching portfolio and timeline gradient */
+    color: #ffffff;
+    padding: 60px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    backdrop-filter: blur(15px); /* Matching navbar */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Lion head emphasis with gradient mask - now the only lion element */
+footer::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 5%; /* Moved to the right side of the page */
+    width: 400px; /* Reduced to 400px as requested */
+    height: 400px; /* Reduced to 400px as requested */
+    background-image: url('footer-sketch/lionsketch.jpg');
+    background-size: 400px auto; /* Adjusted size for better face visibility */
+    background-position: 35% 45%; /* Adjusted to center the lion face properly */
+    background-repeat: no-repeat;
+    opacity: 0.45;
+    mix-blend-mode: soft-light;
+    filter: contrast(2.0) brightness(0.7) saturate(0.8);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    mask: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 80%, transparent 100%); /* Adjusted mask for wider view */
+    -webkit-mask: radial-gradient(circle at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 80%, transparent 100%); /* Adjusted mask for wider view */
+    box-shadow: 
+        inset 0 0 70px rgba(0,0,0,0.5),
+        0 0 30px rgba(255,215,0,0.1);
+    z-index: 2;
+}
+
+.footer-left {
+    flex: 1;
+    text-align: left;
+    max-width: 50%;
+    position: relative;
+    z-index: 3;
+}
+
+.footer-business-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: #FFD700; /* Yellow accent for prominence */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-icon {
+    min-width: 24px;
+    color: #FFD700;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+.footer-phone {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.footer-phone:hover {
+    color: #FFD700;
+}
+
+.footer-map {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.footer-address,
+.footer-hours {
+    color: #aaaaaa;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+    max-width: 50%;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer-logo {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.7));
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 4vw;
+    }
+    
+    footer::before {
+        background-size: 300px auto;
+        opacity: 0.1;
+    }
+    
+    footer::after {
+        width: 150px;
+        height: 150px;
+        right: 5%;
+        opacity: 0.3;
+        background-size: 300px auto;
+    }
+    
+    .footer-left,
+    .footer-right {
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    .footer-right {
+        margin-top: 2rem;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
+    .footer-map {
+        height: 150px;
+    }
+    
+    .footer-logo {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer::before {
+        background-size: 250px auto;
+        opacity: 0.08;
+    }
+    
+    footer::after {
+        width: 120px;
+        height: 120px;
+        opacity: 0.25;
+        background-size: 250px auto;
+    }
+    
+    .footer-logo {
+        max-width: 80px;
+    }
+} 

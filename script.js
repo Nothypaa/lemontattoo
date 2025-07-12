@@ -341,4 +341,78 @@ document.addEventListener('DOMContentLoaded', function() {
         emailInput.addEventListener('blur', checkPhoneVisibility);
     }
     
+    // Floating CTA functionality
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection = document.querySelector('.hero');
+    
+    if (floatingCta && heroSection) {
+        let isVisible = false;
+        let ticking = false;
+        
+        function updateFloatingCta() {
+            const heroHeight = heroSection.offsetHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            
+            // Show floating CTA when user scrolls past 80% of hero section
+            const showThreshold = heroHeight * 0.8;
+            const shouldShow = scrollTop > showThreshold;
+            
+            if (shouldShow && !isVisible) {
+                // Show with slide-in animation
+                floatingCta.classList.remove('slide-out');
+                floatingCta.classList.add('visible');
+                floatingCta.classList.add('slide-in');
+                isVisible = true;
+            } else if (!shouldShow && isVisible) {
+                // Hide with slide-out animation
+                floatingCta.classList.remove('slide-in');
+                floatingCta.classList.add('slide-out');
+                
+                // Remove visible class after animation completes
+                setTimeout(() => {
+                    if (!isVisible) return; // Prevent race condition
+                    floatingCta.classList.remove('visible');
+                    floatingCta.classList.remove('slide-out');
+                }, 500); // Match the animation duration
+                
+                isVisible = false;
+            }
+            
+            // Optional: Hide when near footer to avoid overlap
+            const footer = document.querySelector('footer') || document.querySelector('.contact');
+            if (footer && isVisible) {
+                const footerRect = footer.getBoundingClientRect();
+                const windowBottom = windowHeight;
+                
+                if (footerRect.top < windowBottom + 100) {
+                    floatingCta.classList.add('near-footer');
+                } else {
+                    floatingCta.classList.remove('near-footer');
+                }
+            }
+            
+            ticking = false;
+        }
+        
+        function requestUpdateFloatingCta() {
+            if (!ticking) {
+                requestAnimationFrame(updateFloatingCta);
+                ticking = true;
+            }
+        }
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', requestUpdateFloatingCta);
+        
+        // Initial check
+        updateFloatingCta();
+        
+        // Handle resize events
+        window.addEventListener('resize', function() {
+            // Reset visibility state on resize
+            setTimeout(updateFloatingCta, 100);
+        });
+    }
+    
 }); 

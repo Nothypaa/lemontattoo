@@ -1,0 +1,217 @@
+/* Mobile Hero Section Modifications */
+
+/* Reduce hero height on mobile devices */
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh; /* Reduced from 100vh */
+        min-height: 500px; /* Ensure minimum height for content */
+    }
+    
+    .hero-content {
+        transform: translateY(-50%); /* Center content in reduced height */
+    }
+    
+    .hero-cta-button {
+        margin-top: 2.5rem; /* Reduced spacing */
+    }
+    
+    .reviews-stats {
+        margin-top: 1.5rem; /* Reduced spacing */
+    }
+    
+    .scroll-arrow {
+        bottom: 5vh; /* Adjust arrow position for reduced height */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 65vh; /* Even more reduced for smaller screens */
+        min-height: 450px;
+    }
+    
+    .hero-content {
+        transform: translateY(-45%); /* Slightly higher positioning */
+    }
+    
+    .hero-cta-button {
+        margin-top: 2rem;
+    }
+    
+    .reviews-stats {
+        margin-top: 1rem;
+    }
+    
+    .scroll-arrow {
+        bottom: 3vh;
+    }
+}
+
+/* Call CTA Button Styles */
+.hero-call-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #28a745;
+    color: #ffffff;
+    padding: 0.9rem 1.8rem;
+    border-radius: 25px;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out 2.2s both;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+}
+
+.hero-call-cta .call-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hero-call-cta .call-number {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-call-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+    background: #218838;
+}
+
+.hero-call-cta:hover .call-text {
+    transform: translateY(-150%);
+    opacity: 0;
+}
+
+.hero-call-cta:hover .call-number {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.hero-call-cta:active {
+    transform: translateY(-1px);
+}
+
+/* Only show hover effect on desktop */
+@media (max-width: 768px) {
+    .hero-call-cta .call-text {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+    
+    .hero-call-cta .call-number,
+    .hero-call-cta:hover .call-number {
+        display: none;
+    }
+    
+    .hero-call-cta .call-icon,
+    .hero-call-cta:hover .call-icon {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Call icon */
+.call-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Mobile-specific call button adjustments */
+@media (max-width: 768px) {
+    .hero-call-cta {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+    }
+    
+    .call-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-call-cta {
+        font-size: 0.9rem;
+        padding: 0.75rem 1.3rem;
+        margin-top: 0.8rem;
+        margin-left: 0;
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+    
+    .call-icon {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Button container for mobile layout */
+@media (max-width: 480px) {
+    .hero-cta-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+    
+    .hero-cta-button {
+        margin-top: 2rem;
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .hero-call-cta {
+        margin-top: 0;
+    }
+}
+
+/* Ensure proper spacing between buttons on larger mobile screens */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero-cta-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .hero-cta-button {
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+    }
+    
+    .hero-call-cta {
+        margin-top: 2.5rem;
+    }
+} 
