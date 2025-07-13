@@ -52,7 +52,6 @@ footer::after {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     font-weight: 900;
-    text-transform: uppercase;
     margin-bottom: 1rem;
     color: #FFD700; /* Yellow accent for prominence */
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
@@ -118,7 +117,6 @@ footer::after {
     font-weight: 600;
     color: #FFD700;
     margin-bottom: 0.8rem;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
@@ -176,7 +174,6 @@ footer::after {
     font-weight: 600;
     color: #FFD700;
     margin-bottom: 1rem;
-    text-transform: uppercase;
     letter-spacing: 1px;
 }
 
@@ -226,23 +223,6 @@ footer::after {
     font-weight: 500;
 }
 
-/* Logo Section */
-.footer-logo-section {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.footer-logo {
-    max-width: 120px;
-    height: auto;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.7));
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-.footer-logo:hover {
-    opacity: 1;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -290,9 +270,6 @@ footer::after {
         text-align: left;
     }
     
-    .footer-logo-section {
-        justify-content: flex-start;
-    }
     
     .footer-map {
         height: 150px;
@@ -314,10 +291,6 @@ footer::after {
         height: 120px;
         opacity: 0.25;
         background-size: 250px auto;
-    }
-    
-    .footer-logo {
-        max-width: 80px;
     }
     
     .footer-social-icon {
