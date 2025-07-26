@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /*.mp4$
+
+# Allow search engines to access all important content
+Allow: /index.html
+Allow: /care-guide.html
+Allow: /styles.css
+Allow: /Art/
+Allow: /logo/
+Allow: /staff/
+Allow: /about-us/
+Allow: /contact-page/
+Allow: /icons/
+
+# Sitemap location
+Sitemap: https://lemontattoo.fr/sitemap.xml
+
+# Specific crawl instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1

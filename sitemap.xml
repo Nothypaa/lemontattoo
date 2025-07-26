@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Main Homepage -->
+    <url>
+        <loc>https://lemontattoo.fr/</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://lemontattoo.fr/logo/lemonlogo.png</image:loc>
+            <image:title>Logo Lemon Tattoo</image:title>
+            <image:caption>Logo du salon de tatouage Lemon Tattoo à Castelnau-le-Lez</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://lemontattoo.fr/herovideo/herobackgroundvideo.mp4</video:thumbnail_loc>
+            <video:title>Présentation Lemon Tattoo</video:title>
+            <video:description>Vidéo de présentation du salon Lemon Tattoo</video:description>
+            <video:content_loc>https://lemontattoo.fr/herovideo/herobackgroundvideo.mp4</video:content_loc>
+        </video:video>
+    </url>
+    
+    <!-- Care Guide Page -->
+    <url>
+        <loc>https://lemontattoo.fr/care-guide.html</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://lemontattoo.fr/logo/lemontattoologo2.png</image:loc>
+            <image:title>Guide de Soins Tatouage</image:title>
+            <image:caption>Guide professionnel de soins pour tatouage par Vincent et Alexandre</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Portfolio Section (referenced via index.html#portfolio) -->
+    <url>
+        <loc>https://lemontattoo.fr/#portfolio</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- About Section -->
+    <url>
+        <loc>https://lemontattoo.fr/#about</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Team Section -->
+    <url>
+        <loc>https://lemontattoo.fr/#team</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://lemontattoo.fr/staff/vincent.jpg</image:loc>
+            <image:title>Vincent - Tatoueur spécialisé sketch et aquarelle</image:title>
+            <image:caption>Vincent, tatoueur spécialisé en techniques sketch et aquarelle chez Lemon Tattoo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://lemontattoo.fr/staff/alexandre.jpg</image:loc>
+            <image:title>Alexandre - Tatoueur spécialisé brush style japonais</image:title>
+            <image:caption>Alexandre, tatoueur spécialisé en brush style japonais chez Lemon Tattoo</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Contact Section -->
+    <url>
+        <loc>https://lemontattoo.fr/#contact</loc>
+        <lastmod>2025-01-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>
