@@ -20,7 +20,39 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Navbar scroll behavior - moved to lenis-scroll.js to avoid conflicts
+    // Scroll to Top Button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    // Accueil Button functionality
+    const accueilBtn = document.getElementById('navbarAccueil');
+    const heroSectionForAccueil = document.querySelector('.hero');
+    
+    window.addEventListener('scroll', function() {
+        // Scroll to Top Button
+        if (window.scrollY > 300) { // Show button after scrolling 300px
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+        
+        // Accueil Button - show when past hero section
+        if (heroSectionForAccueil && accueilBtn) {
+            const heroHeight = heroSectionForAccueil.offsetHeight;
+            if (window.scrollY > heroHeight - 100) { // Show 100px before end of hero
+                accueilBtn.classList.add('show');
+            } else {
+                accueilBtn.classList.remove('show');
+            }
+        }
+    });
+    
+    // Scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
     
     // Ensure video starts playing (fallback for autoplay issues)
     const video = document.querySelector('.hero-video');
