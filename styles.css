@@ -390,6 +390,17 @@ body {
     max-width: 90vw;
 }
 
+/* Desktop version - show by default */
+.hero-title-desktop {
+    display: block;
+    white-space: nowrap;
+}
+
+/* Mobile version - hide by default */
+.hero-title-mobile {
+    display: none;
+}
+
 /* Highlighted word styling for hero section */
 .highlighted-word {
     position: relative;
@@ -777,6 +788,11 @@ body {
         max-width: 90vw;
     }
     
+    .hero-title {
+        font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+        line-height: 0.88;
+    }
+    
     .hero-video {
         transform: translateX(-50%) translateY(-50%) scale(0.9);
     }
@@ -820,15 +836,44 @@ body {
     }
 }
 
+/* Additional mobile breakpoint for very small screens */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: 0.2px;
+        line-height: 0.82;
+    }
+}
+
 @media (max-width: 480px) {
     .hero-content {
         left: 3vw;
         max-width: 94vw;
     }
     
-    .hero-title {
-        letter-spacing: 1px;
+    /* Hide desktop version on mobile */
+    .hero-title-desktop {
+        display: none;
+    }
+    
+    /* Show mobile version on mobile */
+    .hero-title-mobile {
+        display: block;
+        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+        letter-spacing: 0.3px;
         margin-bottom: 0.5rem;
+        line-height: 0.8;
+        white-space: nowrap;
+        max-width: none;
+        width: auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title-mobile {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        letter-spacing: 0.2px;
+        line-height: 0.75;
     }
     
     .hero-subtitle {
@@ -903,30 +948,13 @@ body {
     }
 }
 
-/* Mobile positioning for scroll arrow */
+/* Hide scroll arrow on mobile */
 @media (max-width: 768px) {
     .scroll-arrow {
-        bottom: 8vh;
-        right: 8vw;
-        transform: scale(0.8);
-    }
-    
-    .scroll-arrow:hover {
-        transform: scale(0.9);
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
-    .scroll-arrow {
-        bottom: 10vh;
-        right: 5vw;
-        transform: scale(0.7);
-    }
-    
-    .scroll-arrow:hover {
-        transform: scale(0.8);
-    }
-}
 
 /* ===== PORTFOLIO SECTION ===== */
 
