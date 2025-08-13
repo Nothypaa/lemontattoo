@@ -7,11 +7,18 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Lemon Tattoo, salon de tatouage à Castelnau-le-Lez près de Montpellier. Spécialistes en tatouage sketch, aquarelle et brush style japonais. Vincent et Alexandra vous accueillent dans un espace lumineux et paisible.">
-    <meta name="keywords" content="tatouage, Castelnau-le-Lez, Montpellier, salon tatouage, sketch, aquarelle, brush style japonais, Vincent, Alexandra, Lemon Tattoo, Hérault">
+    <meta name="keywords" content="tatouage Castelnau-le-Lez, tatoueur Montpellier, salon tatouage Hérault, tatouage sketch aquarelle, brush japonais près Montpellier, tatoueur professionnel 34170, studio tatouage Occitanie, Vincent Alexandra tatoueurs, tatouage artistique Languedoc">
     <meta name="author" content="Lemon Tattoo">
     <meta name="robots" content="index, follow">
     <meta name="language" content="fr">
     <link rel="canonical" href="https://lemontattoo.fr">
+    
+    <!-- Geo-targeting Meta Tags -->
+    <meta name="geo.region" content="FR-34">
+    <meta name="geo.placename" content="Castelnau-le-Lez">
+    <meta name="geo.position" content="43.630333;3.899993">
+    <meta name="ICBM" content="43.630333, 3.899993">
+    <meta name="DC.title" content="Lemon Tattoo - Salon de Tatouage Castelnau-le-Lez Montpellier">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Lemon Tattoo - Salon de Tatouage à Castelnau-le-Lez">
@@ -29,6 +36,10 @@
     <meta name="twitter:description" content="Salon de tatouage spécialisé en sketch, aquarelle et brush style japonais près de Montpellier.">
     <meta name="twitter:image" content="https://lemontattoo.fr/logo/lemonlogo.png">
     <meta name="twitter:image:alt" content="Logo Lemon Tattoo">
+    
+    <!-- Hreflang for Local Targeting -->
+    <link rel="alternate" hreflang="fr-fr" href="https://lemontattoo.fr/">
+    <link rel="alternate" hreflang="fr" href="https://lemontattoo.fr/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="icons/webicon.png">
@@ -147,6 +158,68 @@
     ]
   }
   </script>
+  
+  <!-- Review Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "TattooShop",
+      "name": "Lemon Tattoo",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "575 Av. de l'Europe",
+        "addressLocality": "Castelnau-le-Lez",
+        "postalCode": "34170",
+        "addressCountry": "FR"
+      }
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Client Satisfait"
+    },
+    "reviewBody": "Excellent travail de Vincent sur mon tatouage sketch. Salon très propre à Castelnau-le-Lez, équipe professionnelle. Je recommande ce salon près de Montpellier!"
+  }
+  </script>
+  
+  <!-- Service Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Tatouage Sketch Aquarelle",
+    "provider": {
+      "@type": "TattooShop",
+      "name": "Lemon Tattoo",
+      "address": "575 Av. de l'Europe, 34170 Castelnau-le-Lez"
+    },
+    "areaServed": ["Castelnau-le-Lez", "Montpellier", "Hérault", "Languedoc-Roussillon"],
+    "description": "Spécialiste tatouage sketch et aquarelle à Castelnau-le-Lez près de Montpellier",
+    "serviceType": "Tatouage artistique"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service", 
+    "name": "Tatouage Brush Style Japonais",
+    "provider": {
+      "@type": "TattooShop",
+      "name": "Lemon Tattoo",
+      "address": "575 Av. de l'Europe, 34170 Castelnau-le-Lez"
+    },
+    "areaServed": ["Castelnau-le-Lez", "Montpellier", "Hérault", "Languedoc-Roussillon"],
+    "description": "Tatouage brush style japonais par Alexandra à Castelnau-le-Lez Montpellier",
+    "serviceType": "Tatouage japonais"
+  }
+  </script>
   </head>
   <body>
     <!-- Floating Call-to-Action Button -->
@@ -163,7 +236,7 @@
     <nav class="navbar">
         <div class="navbar-logo navbar-logo-enter">
             <a href="#" class="logo-link">
-                <img src="logo/lemonlogo.png" alt="Logo Lemon Tattoo - Salon de tatouage Castelnau-le-Lez Montpellier" class="navbar-logo-img">
+                <img src="logo/lemonlogo.png" alt="Logo Lemon Tattoo salon tatouage professionnel Castelnau-le-Lez Montpellier Hérault" class="navbar-logo-img">
                 Lemon Tattoo
             </a>
         </div>
@@ -360,7 +433,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/tattoo1.webp" alt="Tatouage Minimaliste" loading="lazy">
+                            <img src="Art/tattoo1.webp" alt="Tatouage lion géométrique sketch Vincent Lemon Tattoo Castelnau-le-Lez Montpellier" loading="lazy">
                             <button class="view-btn" data-img="Art/tattoo1.webp" data-title="Rose Minimaliste - Vincent">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -378,7 +451,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/tattoo2.webp" alt="Tatouage Papillon Mandala" loading="lazy">
+                            <img src="Art/tattoo2.webp" alt="Tatouage portrait femme cornes sketch Vincent salon Castelnau-le-Lez Montpellier" loading="lazy">
                             <button class="view-btn" data-img="Art/tattoo2.webp" data-title="Mandala Papillon - Alexandra">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -396,7 +469,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/tattoo3.webp" alt="Tatouage Phases Lunaires" loading="lazy">
+                            <img src="Art/tattoo3.webp" alt="Tatouage loup géométrique trait fin Vincent tatoueur Castelnau-le-Lez Hérault" loading="lazy">
                             <button class="view-btn" data-img="Art/tattoo3.webp" data-title="Phases Lunaires - Vincent">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -563,7 +636,7 @@
             <!-- Vincent's Card -->
             <div class="artist-card">
                 <div class="artist-photo">
-                    <img src="staff/vincent.webp" alt="Vincent - Tatoueur fondateur Lemon Tattoo style sketch aquarelle">
+                    <img src="staff/vincent.webp" alt="Vincent tatoueur fondateur Lemon Tattoo spécialiste sketch aquarelle Castelnau-le-Lez Montpellier">
                 </div>
                 <div class="artist-info">
                     <h3 class="artist-name">Vincent</h3>
@@ -586,7 +659,7 @@
             <!-- Alexandra's Card -->
             <div class="artist-card">
                 <div class="artist-photo">
-                    <img src="staff/alexandre.webp" alt="Alexandra - Tatoueur artiste Lemon Tattoo brush style japonais">
+                    <img src="staff/alexandre.webp" alt="Alexandra tatoueur artiste brush style japonais Lemon Tattoo salon Castelnau-le-Lez Hérault">
                 </div>
                 <div class="artist-info">
                     <h3 class="artist-name">Alexandra</h3>

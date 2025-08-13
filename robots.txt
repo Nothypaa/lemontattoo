@@ -1,18 +1,38 @@
+# Lemon Tattoo - SEO Optimized Robots.txt
+# Allow all major search engines to crawl the site
+
 User-agent: *
 Allow: /
+
+# Disallow unnecessary files and directories
 Disallow: /private/
 Disallow: /*.mp4$
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /SuperClaude/
+Disallow: /*.md$
+Disallow: /CLAUDE.md
+Disallow: /README.md
+Disallow: /seo-checklist.md
+Disallow: /lemontattoo.md
 
-# Allow search engines to access all important content
+# Explicitly allow important content
 Allow: /index.html
 Allow: /care-guide.html
-Allow: /styles.css
+Allow: /gallery.html
 Allow: /Art/
 Allow: /logo/
 Allow: /staff/
 Allow: /about-us/
 Allow: /contact-page/
 Allow: /icons/
+Allow: /herovideo/
+Allow: /footer-sketch/
+
+# CSS and JavaScript files
+Allow: /*.css
+Allow: /*.js
+Allow: /*.svg
 
 # Sitemap location
 Sitemap: https://lemontattoo.fr/sitemap.xml
@@ -25,3 +45,34 @@ Crawl-delay: 1
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Block AI training bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Block archive bots
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
