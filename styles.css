@@ -767,7 +767,7 @@ body {
     }
     
     .hero-title {
-        font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+        font-size: clamp(3rem, 6vw, 4.5rem);
         line-height: 1.1;
     }
     
@@ -837,7 +837,7 @@ body {
     /* Show mobile version on mobile */
     .hero-title-mobile {
         display: block;
-        font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
         letter-spacing: 0.3px;
         margin-bottom: 0.5rem;
         line-height: 1.05;
@@ -849,7 +849,7 @@ body {
 
 @media (max-width: 360px) {
     .hero-title-mobile {
-        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-size: clamp(2.3rem, 4.5vw, 3.5rem);
         letter-spacing: 0.2px;
         line-height: 1.0;
     }
