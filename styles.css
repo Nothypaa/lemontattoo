@@ -1295,6 +1295,10 @@ body {
         gap: 30px;
     }
     
+    /* Show only first 3 items on mobile */
+    .tattoo-item:nth-child(n+4) {
+        display: none;
+    }
     
     .artist-tabs {
         gap: 1rem;

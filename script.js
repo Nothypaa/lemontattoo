@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Modal functionality
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
-    const modalTitle = document.querySelector('.modal-title');
     const modalClose = document.querySelector('.modal-close');
     const viewButtons = document.querySelectorAll('.view-btn');
 
@@ -117,12 +116,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 
                 const imgSrc = this.getAttribute('data-img');
-                const title = this.getAttribute('data-title');
                 
                 if (imgSrc !== 'placeholder') {
                     modalImage.src = imgSrc;
-                    modalImage.alt = title;
-                    if (modalTitle) modalTitle.textContent = title;
+                    modalImage.alt = 'Tatouage Lemon Tattoo';
                     modal.classList.add('show');
                     document.body.style.overflow = 'hidden';
                 }
