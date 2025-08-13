@@ -369,7 +369,7 @@ body {
     left: 5vw;
     top: 50%;
     transform: translateY(-60%); /* Moved up from -50% */
-    max-width: 600px;
+    max-width: 800px; /* Increased from 600px to allow 2-line layout */
     z-index: 5;
     text-align: left;
 }
@@ -377,17 +377,17 @@ body {
 /* H1 - New styling according to instructions */
 .hero-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 900;
     color: #FFFFFF;
     letter-spacing: -1px;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    line-height: 0.9;
+    margin-bottom: 0.8rem;
     text-shadow: none;
     text-align: left;
     opacity: 0;
     animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
-    max-width: 600px;
+    max-width: 90vw;
 }
 
 /* Highlighted word styling for hero section */
@@ -828,7 +828,7 @@ body {
     
     .hero-title {
         letter-spacing: 1px;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     
     .hero-subtitle {
@@ -1037,6 +1037,42 @@ body {
     background: #FFD900;
     color: #000;
     font-weight: 600;
+}
+
+/* Voir Plus Button */
+.voir-plus-container {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.voir-plus-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFD900;
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 217, 0, 0.3);
+}
+
+.voir-plus-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 217, 0, 0.4);
+    background: #FFF200;
+}
+
+.voir-plus-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.voir-plus-btn:hover .arrow-icon {
+    transform: translateX(4px);
 }
 
 /* Tattoo Item */

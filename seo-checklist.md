@@ -22,7 +22,7 @@
 | **Mobile SEO** | Responsive design with proper viewport | ✅ Complete | A |
 | **Content** | Professional care guide with comprehensive instructions | ✅ Complete | A+ |
 | **Social Media** | Open Graph and Twitter Card meta tags | ✅ Complete | A |
-| **Branding** | Artist specialization content (Vincent, Alexandre) | ✅ Complete | A |
+| **Branding** | Artist specialization content (Vincent, Alexandra) | ✅ Complete | A |
 
 ---
 
@@ -271,7 +271,7 @@
 
 3. **Cross-reference artist specializations:**
    - Link Vincent's work to sketch/watercolor care tips
-   - Link Alexandre's work to Japanese style aftercare
+   - Link Alexandra's work to Japanese style aftercare
 
 **Success Metrics:**
 - Reduced bounce rate by 10-15%

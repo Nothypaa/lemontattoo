@@ -4,8 +4,11 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Initialize Lenis only if it's available
-    if (typeof Lenis !== 'undefined') {
+    // Check if device is desktop (width > 1024px)
+    const isDesktop = window.innerWidth > 1024;
+    
+    // Initialize Lenis only if it's available AND on desktop
+    if (typeof Lenis !== 'undefined' && isDesktop) {
         
         // Create Lenis instance with optimized settings
         const lenis = new Lenis({
@@ -158,7 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Handle window resize for Lenis
 window.addEventListener('resize', () => {
-    if (window.lenisInstance) {
+    const isDesktop = window.innerWidth > 1024;
+    
+    if (window.lenisInstance && isDesktop) {
         window.lenisInstance.resize();
+    } else if (window.lenisInstance && !isDesktop) {
+        // Destroy Lenis instance if switching to mobile/tablet
+        window.lenisInstance.destroy();
+        window.lenisInstance = null;
     }
 }); 
