@@ -74,29 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Scroll reveal animations for portfolio items
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const portfolioObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe portfolio items
-        const portfolioItems = document.querySelectorAll('.tattoo-item');
-        portfolioItems.forEach((item, index) => {
-            // Set initial animation delay
-            item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-            
-            portfolioObserver.observe(item);
-        });
-
         // Smooth navbar background transition on scroll
         const navbar = document.querySelector('.navbar');
         if (navbar) {
@@ -141,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Lenis smooth scrolling initialized successfully');
 
     } else {
-        console.warn('Lenis library not found. Smooth scrolling will fallback to native behavior.');
+        console.warn('Lenis library not found or mobile device. Smooth scrolling will fallback to native behavior.');
         
         // Fallback smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -157,6 +134,30 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    
+    // Portfolio image reveal animation - WORKS ON ALL DEVICES
+    // Moved outside the desktop-only condition to fix mobile image loading
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const portfolioObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observe portfolio items on all devices
+    const portfolioItems = document.querySelectorAll('.tattoo-item');
+    portfolioItems.forEach((item, index) => {
+        // Set initial animation delay
+        item.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        
+        portfolioObserver.observe(item);
+    });
 });
 
 // Handle window resize for Lenis
