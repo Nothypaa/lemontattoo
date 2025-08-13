@@ -96,19 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
-                // Reset mobile show more state when filtering
-                const showMoreBtn = document.getElementById('showMoreBtn');
-                const galleryGrid = document.querySelector('.gallery-grid');
-                
-                if (showMoreBtn && galleryGrid && window.innerWidth <= 768) {
-                    galleryGrid.classList.remove('show-all');
-                    showMoreBtn.textContent = 'Voir plus d\'œuvres';
-                    showMoreBtn.classList.remove('active');
-                    // Reset the isExpanded flag (we'll need to make it accessible)
-                    if (window.mobileShowMoreState) {
-                        window.mobileShowMoreState.isExpanded = false;
-                    }
-                }
             });
         });
     }
@@ -165,39 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile Show More functionality
-    const showMoreBtn = document.getElementById('showMoreBtn');
-    const galleryGrid = document.querySelector('.gallery-grid');
-    
-    if (showMoreBtn && galleryGrid) {
-        // Create global state for mobile show more
-        window.mobileShowMoreState = { isExpanded: false };
-        
-        showMoreBtn.addEventListener('click', function() {
-            if (!window.mobileShowMoreState.isExpanded) {
-                // Show all items
-                galleryGrid.classList.add('show-all');
-                showMoreBtn.textContent = 'Voir moins';
-                showMoreBtn.classList.add('active');
-                window.mobileShowMoreState.isExpanded = true;
-            } else {
-                // Hide items beyond first 3
-                galleryGrid.classList.remove('show-all');
-                showMoreBtn.textContent = 'Voir plus d\'œuvres';
-                showMoreBtn.classList.remove('active');
-                window.mobileShowMoreState.isExpanded = false;
-                
-                // Scroll back to top of portfolio section
-                const portfolioSection = document.querySelector('#portfolio');
-                if (portfolioSection) {
-                    portfolioSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
-    }
     
     // Contact form functionality
     const contactForm = document.getElementById('contactForm');
