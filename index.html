@@ -11,7 +11,11 @@
     <meta name="author" content="Lemon Tattoo">
     <meta name="robots" content="index, follow">
     <meta name="language" content="fr">
-    <link rel="canonical" href="https://lemontattoo.fr">
+    <link rel="canonical" href="https://www.lemontattoo.fr/">
+    
+    <!-- HTTPS Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     
     <!-- Geo-targeting Meta Tags -->
     <meta name="geo.region" content="FR-34">
@@ -24,8 +28,8 @@
     <meta property="og:title" content="Lemon Tattoo - Salon de Tatouage à Castelnau-le-Lez">
     <meta property="og:description" content="Salon de tatouage spécialisé en sketch, aquarelle et brush style japonais. Vincent et Alexandra vous accueillent dans un espace lumineux à Castelnau-le-Lez près de Montpellier.">
     <meta property="og:type" content="business.business">
-    <meta property="og:url" content="https://lemontattoo.fr">
-    <meta property="og:image" content="https://lemontattoo.fr/logo/lemonlogo.png">
+    <meta property="og:url" content="https://www.lemontattoo.fr/">
+    <meta property="og:image" content="https://www.lemontattoo.fr/logo/lemonlogo.png">
     <meta property="og:image:alt" content="Logo Lemon Tattoo - Salon de tatouage Castelnau-le-Lez">
     <meta property="og:site_name" content="Lemon Tattoo">
     <meta property="og:locale" content="fr_FR">
@@ -34,12 +38,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lemon Tattoo - Salon de Tatouage à Castelnau-le-Lez">
     <meta name="twitter:description" content="Salon de tatouage spécialisé en sketch, aquarelle et brush style japonais près de Montpellier.">
-    <meta name="twitter:image" content="https://lemontattoo.fr/logo/lemonlogo.png">
+    <meta name="twitter:image" content="https://www.lemontattoo.fr/logo/lemonlogo.png">
     <meta name="twitter:image:alt" content="Logo Lemon Tattoo">
     
     <!-- Hreflang for Local Targeting -->
-    <link rel="alternate" hreflang="fr-fr" href="https://lemontattoo.fr/">
-    <link rel="alternate" hreflang="fr" href="https://lemontattoo.fr/">
+    <link rel="alternate" hreflang="fr-fr" href="https://www.lemontattoo.fr/">
+    <link rel="alternate" hreflang="fr" href="https://www.lemontattoo.fr/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="icons/webicon.png">
@@ -61,9 +65,9 @@
     "@context": "https://schema.org",
     "@type": "TattooShop",
     "name": "Lemon Tattoo",
-    "image": "https://lemontattoo.fr/logo/lemonlogo.png",
+    "image": "https://www.lemontattoo.fr/logo/lemonlogo.png",
     "description": "Salon de tatouage spécialisé en sketch, aquarelle et brush style japonais à Castelnau-le-Lez près de Montpellier",
-    "url": "https://lemontattoo.fr",
+    "url": "https://www.lemontattoo.fr/",
     "telephone": "+33781166806",
     "email": "contact@lemontattoo.fr",
     "address": {
@@ -80,8 +84,7 @@
       "longitude": 3.899992676158069
     },
     "openingHours": [
-      "Mo-Fr 10:30-18:30",
-      "Sa 10:30-19:30"
+      "Mo-Fr 10:00-18:00"
     ],
     "paymentAccepted": "Cash, Credit Card",
     "currenciesAccepted": "EUR",
@@ -89,7 +92,9 @@
     "aggregateRating": {
       "@type": "AggregateRating", 
       "ratingValue": "4.9",
-      "reviewCount": "70"
+      "reviewCount": 70,
+      "bestRating": 5,
+      "worstRating": 1
     },
     "founder": [
       {
@@ -129,31 +134,31 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Accueil",
-        "item": "https://lemontattoo.fr/"
+        "item": "https://www.lemontattoo.fr/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Portfolio",
-        "item": "https://lemontattoo.fr/#portfolio"
+        "item": "https://www.lemontattoo.fr/#portfolio"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "À Propos",
-        "item": "https://lemontattoo.fr/#about"
+        "item": "https://www.lemontattoo.fr/#about"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "Équipe",
-        "item": "https://lemontattoo.fr/#team"
+        "item": "https://www.lemontattoo.fr/#team"
       },
       {
         "@type": "ListItem",
         "position": 5,
         "name": "Contact",
-        "item": "https://lemontattoo.fr/#contact"
+        "item": "https://www.lemontattoo.fr/#contact"
       }
     ]
   }
@@ -165,26 +170,54 @@
     "@context": "https://schema.org",
     "@type": "Review",
     "itemReviewed": {
-      "@type": "LocalBusiness",
+      "@type": "TattooShop",
       "name": "Lemon Tattoo",
+      "url": "https://www.lemontattoo.fr/",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "575 Av. de l'Europe",
         "addressLocality": "Castelnau-le-Lez",
         "postalCode": "34170",
         "addressCountry": "FR"
-      }
+      },
+      "telephone": "+33781166806",
+      "priceRange": "€€"
     },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "5",
-      "bestRating": "5"
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "author": {
       "@type": "Person",
-      "name": "Client Satisfait"
+      "name": "Marie L."
     },
-    "reviewBody": "Excellent travail de Vincent sur mon tatouage sketch. Salon très propre à Castelnau-le-Lez, équipe professionnelle. Je recommande ce salon près de Montpellier!"
+    "datePublished": "2025-08-10",
+    "reviewBody": "Excellent travail de Vincent sur mon tatouage sketch. Salon très propre à Castelnau-le-Lez, équipe professionnelle. Je recommande ce salon près de Montpellier!",
+    "name": "Tatouage sketch réalisé par Vincent - Parfait!"
+  }
+  </script>
+  
+  <!-- Organization Schema for Social Profiles -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lemon Tattoo",
+    "url": "https://www.lemontattoo.fr/",
+    "logo": "https://www.lemontattoo.fr/logo/lemonlogo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+33781166806",
+      "contactType": "customer service",
+      "availableLanguage": "French"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Lemontattooshop",
+      "https://www.instagram.com/lemontattooshop",
+      "https://share.google/KWc2MjEMiuYqUfTtn"
+    ]
   }
   </script>
   
@@ -220,6 +253,48 @@
     "serviceType": "Tatouage japonais"
   }
   </script>
+  
+  <!-- FAQ Page Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment prendre rendez-vous pour un tatouage à Castelnau-le-Lez ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pour prendre rendez-vous chez Lemon Tattoo à Castelnau-le-Lez, vous pouvez nous appeler au 07 81 16 68 06 ou utiliser notre formulaire de contact. Nous sommes situés au 575 Av. de l'Europe, 34170 Castelnau-le-Lez, à seulement 10 minutes de Montpellier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels sont les prix des tatouages chez Lemon Tattoo Castelnau-le-Lez ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos tarifs à Castelnau-le-Lez débutent à 80€ pour les petites pièces. Le prix final dépend de la taille, de la complexité et du style choisi (sketch, aquarelle, brush japonais)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi choisir un tatoueur à Castelnau-le-Lez plutôt qu'à Montpellier ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lemon Tattoo à Castelnau-le-Lez offre un environnement plus calme et paisible que le centre-ville de Montpellier, un parking facile et gratuit, et une atmosphère plus personnalisée."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "À quelle distance de Montpellier se trouve Lemon Tattoo ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Lemon Tattoo se trouve à seulement 10 minutes en voiture du centre-ville de Montpellier. Situé au 575 Av. de l'Europe à Castelnau-le-Lez, facilement accessible via la sortie d'autoroute A9."
+        }
+      }
+    ]
+  }
+  </script>
   </head>
   <body>
     <!-- Floating Call-to-Action Button -->
@@ -236,7 +311,7 @@
     <nav class="navbar">
         <div class="navbar-logo navbar-logo-enter">
             <a href="#" class="logo-link">
-                <img src="logo/lemonlogo.png" alt="Logo Lemon Tattoo salon tatouage professionnel Castelnau-le-Lez Montpellier Hérault" class="navbar-logo-img">
+                <img src="logo/lemonlogo.png" alt="Lemon Tattoo Castelnau-le-Lez 34170 - Meilleur salon tatouage face arrêt Clairval tram 2" class="navbar-logo-img">
                 Lemon Tattoo
             </a>
         </div>
@@ -246,7 +321,7 @@
             <li class="navbar-item navbar-menu-enter"><a href="#portfolio" class="navbar-link">Portfolio</a></li>
             <li class="navbar-item navbar-menu-enter"><a href="#about" class="navbar-link">À Propos</a></li>
             <li class="navbar-item navbar-menu-enter"><a href="#team" class="navbar-link">Artistes</a></li>
-            <li class="navbar-item navbar-menu-enter"><a href="care-guide.html" class="navbar-link">Guide de Soins</a></li>
+            <li class="navbar-item navbar-menu-enter"><a href="#faq" class="navbar-link">FAQ</a></li>
             <li class="navbar-item navbar-menu-enter"><a href="#contact" class="navbar-link">Contact</a></li>
             <li class="navbar-item mobile-cta-item navbar-menu-enter">
                 <a href="#contact" class="navbar-cta">Réserver</a>
@@ -304,7 +379,7 @@
                 </a>
             </div>
             <div class="reviews-stats">
-                ★★★★★ 5.0 • +70 avis clients satisfaits <img src="logo/googleG.webp" alt="Google" class="google-icon">
+                ★★★★★ 5.0 • +70 avis clients satisfaits <img src="logo/googleG.webp" alt="Avis Google Lemon Tattoo Castelnau-le-Lez 34170" class="google-icon">
             </div>
         </div>
 
@@ -420,7 +495,7 @@
             <button class="artist-tab" data-artist="vincent">
                 Vincent
             </button>
-            <button class="artist-tab" data-artist="alexandre">
+            <button class="artist-tab" data-artist="alexandra">
                 Alexandra
             </button>
         </div>
@@ -433,7 +508,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/tattoo1.webp" alt="Tatouage lion géométrique sketch Vincent Lemon Tattoo Castelnau-le-Lez Montpellier" loading="lazy">
+                            <img src="Art/tattoo1.webp" alt="Tatouage sketch lion Castelnau-le-Lez - Vincent tatoueur 34170 Avenue de l'Europe" loading="lazy">
                             <button class="view-btn" data-img="Art/tattoo1.webp" data-title="Rose Minimaliste - Vincent">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -446,13 +521,13 @@
             </div>
 
             <!-- Tattoo Item 2 -->
-            <div class="tattoo-item" data-artist="alexandre">
+            <div class="tattoo-item" data-artist="vincent">
                 <div class="sketchbook-page">
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/tattoo2.webp" alt="Tatouage portrait femme cornes sketch Vincent salon Castelnau-le-Lez Montpellier" loading="lazy">
-                            <button class="view-btn" data-img="Art/tattoo2.webp" data-title="Mandala Papillon - Alexandra">
+                            <img src="Art/tattoo2.webp" alt="Tatouage portrait artistique Castelnau-le-Lez 34170 - Salon Lemon Tattoo près Clairval" loading="lazy">
+                            <button class="view-btn" data-img="Art/tattoo2.webp" data-title="Portrait Femme - Vincent">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
                                 </svg>
@@ -469,7 +544,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/tattoo3.webp" alt="Tatouage loup géométrique trait fin Vincent tatoueur Castelnau-le-Lez Hérault" loading="lazy">
+                            <img src="Art/tattoo3.webp" alt="Tatouage géométrique trait fin Castelnau-le-Lez - Tatoueur professionnel 34170" loading="lazy">
                             <button class="view-btn" data-img="Art/tattoo3.webp" data-title="Phases Lunaires - Vincent">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -487,7 +562,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/alextattoo1.webp" alt="Tatouage réalisé par Alexandra" loading="lazy">
+                            <img src="Art/alextattoo1.webp" alt="Tatouage brush japonais Castelnau-le-Lez - Alexandra tatoueuse salon 34170" loading="lazy">
                             <button class="view-btn" data-img="Art/alextattoo1.webp" data-title="Œuvre - Alexandra">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -505,7 +580,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/alextattoo2.webp" alt="Tatouage réalisé par Alexandra" loading="lazy">
+                            <img src="Art/alextattoo2.webp" alt="Tatouage style japonais Castelnau-le-Lez 34170 - Lemon Tattoo Avenue Europe" loading="lazy">
                             <button class="view-btn" data-img="Art/alextattoo2.webp" data-title="Œuvre - Alexandra">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -523,7 +598,7 @@
                     <div class="page-corner"></div>
                     <div class="polaroid">
                         <div class="photo-frame">
-                            <img src="Art/alextattoo3.webp" alt="Tatouage réalisé par Alexandra" loading="lazy">
+                            <img src="Art/alextattoo3.webp" alt="Tatouage artistique Alexandra Castelnau-le-Lez - Salon tatouage tram Clairval 34170" loading="lazy">
                             <button class="view-btn" data-img="Art/alextattoo3.webp" data-title="Œuvre - Alexandra">
                                 <svg class="magnify-icon" viewBox="0 0 24 24" width="24" height="24">
                                     <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
@@ -574,7 +649,7 @@
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-image">
-                        <img src="about-us/ouverture.jpg" alt="Ouverture salon Lemon Tattoo Castelnau-le-Lez - Vincent tatoueur">
+                        <img src="about-us/ouverture.jpg" alt="Salon tatouage Lemon Tattoo Castelnau-le-Lez 34170 - Ouverture Avenue de l'Europe">
                     </div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Les Débuts à Montpellier</h3>
@@ -592,7 +667,7 @@
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-image">
-                        <img src="about-us/vincentworking.jpg" alt="Vincent tatoueur au travail - Style sketch aquarelle Lemon Tattoo">
+                        <img src="about-us/vincentworking.jpg" alt="Vincent tatoueur Castelnau-le-Lez 34170 - Artiste sketch aquarelle zone Eureka">
                     </div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">L'Art Prend Forme</h3>
@@ -610,7 +685,7 @@
                 </div>
                 <div class="timeline-card">
                     <div class="timeline-image">
-                        <img src="about-us/insideshop.jpg" alt="Intérieur salon Lemon Tattoo - Espace lumineux tatouage Castelnau-le-Lez">
+                        <img src="about-us/insideshop.jpg" alt="Intérieur Lemon Tattoo Castelnau-le-Lez - Salon tatouage moderne 34170 face Clairval">
                     </div>
                     <div class="timeline-content">
                         <h3 class="timeline-title">Une Équipe, Une Vision</h3>
@@ -636,7 +711,7 @@
             <!-- Vincent's Card -->
             <div class="artist-card">
                 <div class="artist-photo">
-                    <img src="staff/vincent.webp" alt="Vincent tatoueur fondateur Lemon Tattoo spécialiste sketch aquarelle Castelnau-le-Lez Montpellier">
+                    <img src="staff/vincent.webp" alt="Vincent tatoueur Castelnau-le-Lez 34170 - Spécialiste sketch aquarelle Avenue Europe">
                 </div>
                 <div class="artist-info">
                     <h3 class="artist-name">Vincent</h3>
@@ -659,7 +734,7 @@
             <!-- Alexandra's Card -->
             <div class="artist-card">
                 <div class="artist-photo">
-                    <img src="staff/alexandre.webp" alt="Alexandra tatoueur artiste brush style japonais Lemon Tattoo salon Castelnau-le-Lez Hérault">
+                    <img src="staff/alexandre.webp" alt="Alexandra tatoueuse Castelnau-le-Lez 34170 - Experte brush japonais près tram Clairval">
                 </div>
                 <div class="artist-info">
                     <h3 class="artist-name">Alexandra</h3>
@@ -676,6 +751,138 @@
                         </svg>
                         @pencilsline_tattoo_2
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <!-- Section Header -->
+        <div class="faq-header">
+            <h2 class="section-title">Questions <span class="highlighted-word-underline">Fréquentes</span></h2>
+            <p class="section-subtitle">Tout ce que vous devez savoir sur Lemon Tattoo</p>
+        </div>
+        
+        <!-- FAQ Container -->
+        <div class="faq-container">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Comment prendre rendez-vous pour un tatouage à Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Pour prendre rendez-vous chez Lemon Tattoo à Castelnau-le-Lez, vous pouvez nous appeler au <strong>07 81 16 68 06</strong> ou utiliser notre formulaire de contact. Nous sommes situés au <strong>575 Av. de l'Europe, 34170 Castelnau-le-Lez</strong>, à seulement 10 minutes de Montpellier. Vincent et Alexandra vous accueilleront pour discuter de votre projet de tatouage.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quels sont les prix des tatouages chez Lemon Tattoo Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Nos tarifs à Castelnau-le-Lez débutent à <strong>80€</strong> pour les petites pièces. Le prix final dépend de la taille, de la complexité et du style choisi (sketch, aquarelle, brush japonais). Nos prix reflètent la qualité professionnelle de nos artistes Vincent et Alexandra, ainsi que notre engagement envers l'hygiène et la sécurité. Contactez-nous pour un devis personnalisé.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Pourquoi choisir un tatoueur à Castelnau-le-Lez plutôt qu'à Montpellier ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Lemon Tattoo à Castelnau-le-Lez offre plusieurs avantages : <strong>un environnement plus calme et paisible</strong> que le centre-ville de Montpellier, un <strong>parking facile et gratuit</strong>, et une atmosphère plus personnalisée. Notre salon lumineux est spécialement conçu pour créer une expérience relaxante, tout en restant facilement accessible depuis Montpellier (10 minutes en voiture). <strong>Nous sommes également situés juste en face de l'arrêt Clairval, accessible par le tram numéro 2</strong>, offrant une connexion directe depuis Montpellier.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Tatouage sketch et aquarelle : spécialité de Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Oui ! Lemon Tattoo est reconnu comme <strong>spécialiste du tatouage sketch et aquarelle</strong> dans la région de Montpellier. Vincent maîtrise parfaitement ces techniques artistiques qui donnent un rendu unique, comme des <strong>croquis vivants sur la peau</strong>. Alexandra complète cette expertise avec le <strong>brush style japonais</strong>, offrant une palette artistique complète à Castelnau-le-Lez.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>À quelle distance de Montpellier se trouve Lemon Tattoo ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Lemon Tattoo se trouve à <strong>seulement 10 minutes en voiture du centre-ville de Montpellier</strong>. Situé au 575 Av. de l'Europe à Castelnau-le-Lez (34170), notre salon est <strong>facilement accessible</strong> depuis Montpellier via la sortie d'autoroute A9. Parking gratuit disponible sur place, contrairement aux salons du centre-ville de Montpellier.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 7 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Parking disponible au salon de tatouage Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p><strong>Oui, parking gratuit et facile</strong> ! L'un des grands avantages de Lemon Tattoo à Castelnau-le-Lez est la <strong>disponibilité du stationnement gratuit</strong> à proximité immédiate du salon. Plus besoin de chercher une place payante ou de stresser avant votre rendez-vous tatouage, comme c'est souvent le cas dans le centre de Montpellier.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 8 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Quels sont les horaires du salon Lemon Tattoo à Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Lemon Tattoo à Castelnau-le-Lez est ouvert :<br>
+                    <strong>Du lundi au vendredi : 10h00 - 18h00</strong><br>
+                    <strong>Samedi et dimanche : Fermé</strong><br>
+                    Nous recommandons de prendre rendez-vous à l'avance en appelant le <strong>07 81 16 68 06</strong> pour garantir votre créneau avec Vincent ou Alexandra.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 9 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Premier tatouage : pourquoi choisir Lemon Tattoo Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Pour votre premier tatouage, Lemon Tattoo à Castelnau-le-Lez offre <strong>un environnement rassurant et professionnel</strong>. Vincent et Alexandra prennent le temps d'<strong>expliquer chaque étape</strong>, de discuter vos attentes et de vous mettre à l'aise. Notre salon lumineux et paisible, loin de l'agitation de Montpellier, est idéal pour une <strong>première expérience positive</strong>.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 10 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span>Hygiène et sécurité : normes respectées à Castelnau-le-Lez ?</span>
+                    <svg class="faq-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p><strong>Hygiène et sécurité maximales</strong> chez Lemon Tattoo à Castelnau-le-Lez ! Nous respectons scrupuleusement toutes les <strong>normes sanitaires en vigueur</strong> : matériel stérilisé et à usage unique, protocoles de désinfection stricts, et formation continue de nos tatoueurs. La <strong>sécurité de nos clients</strong> est notre priorité absolue dans notre salon de Castelnau-le-Lez.</p>
                 </div>
             </div>
         </div>
@@ -701,7 +908,7 @@
                 <div class="contact-form-container">
                     <h3 class="form-title">Envoyer Un message</h3>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnnbvzdp" method="POST">
                         <div class="form-group">
                             <label for="name" class="form-label">Nom</label>
                             <input type="text" id="name" name="name" class="form-input" placeholder="Nom" required>
@@ -763,7 +970,7 @@
                             </div>
                             <div class="contact-text">
                                 <span class="contact-label">HORAIRES</span>
-                                <span class="contact-value">Lundi – Vendredi 10:30 – 18:30<br>Samedi 10:30 - 19:30</span>
+                                <span class="contact-value">Lundi – Vendredi 10:00 – 18:00<br>Samedi et dimanche : Fermé</span>
                             </div>
                         </div>
                     </div>
@@ -801,7 +1008,7 @@
     <div id="imageModal" class="modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
-            <img id="modalImage" src="" alt="Tatouage Lemon Tattoo - Œuvre réalisée par Vincent ou Alexandra">
+            <img id="modalImage" src="" alt="Tatouage artistique Castelnau-le-Lez 34170 - Réalisation Lemon Tattoo Avenue de l'Europe">
         </div>
     </div>
     
@@ -830,14 +1037,10 @@
                 <div class="footer-schedule">
                     <div class="schedule-item">
                         <span class="day">Lundi - Vendredi</span>
-                        <span class="hours">10:30 - 18:30</span>
+                        <span class="hours">10:00 - 18:00</span>
                     </div>
                     <div class="schedule-item">
-                        <span class="day">Samedi</span>
-                        <span class="hours">10:30 - 19:30</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="day">Dimanche</span>
+                        <span class="day">Samedi - Dimanche</span>
                         <span class="hours">Fermé</span>
                     </div>
                 </div>

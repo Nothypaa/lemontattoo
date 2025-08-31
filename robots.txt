@@ -1,8 +1,12 @@
 # Lemon Tattoo - SEO Optimized Robots.txt
 # Allow all major search engines to crawl the site
 
+# Preferred HTTPS protocol - redirect HTTP to HTTPS
 User-agent: *
 Allow: /
+
+# Canonical host preference (HTTPS only)
+# This helps prevent HTTP indexing issues
 
 # Disallow unnecessary files and directories
 Disallow: /private/
@@ -35,7 +39,7 @@ Allow: /*.js
 Allow: /*.svg
 
 # Sitemap location
-Sitemap: https://lemontattoo.fr/sitemap.xml
+Sitemap: https://www.lemontattoo.fr/sitemap.xml
 
 # Specific crawl instructions for major search engines
 User-agent: Googlebot

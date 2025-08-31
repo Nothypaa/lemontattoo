@@ -185,27 +185,36 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'ENVOI EN COURS...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual form handling)
-            setTimeout(() => {
-                // Show success message
-                alert('Merci pour votre message ! Nous vous recontacterons rapidement.');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Reset button
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // Optional: scroll to top of contact section
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                    contactSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+            // Submit to Formspree
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Success
+                    alert('Merci pour votre message ! Nous vous recontacterons rapidement.');
+                    contactForm.reset();
+                } else {
+                    // Error
+                    response.json().then(data => {
+                        if (Object.hasOwnProperty.call(data, 'errors')) {
+                            alert('Il y a eu un problème avec votre soumission:\n' + data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Oups! Il y a eu un problème lors de l\'envoi de votre message.');
+                        }
                     });
                 }
-            }, 2000);
+            }).catch(error => {
+                // Network or other error
+                alert('Oups! Il y a eu un problème lors de l\'envoi de votre message.');
+            }).finally(() => {
+                // Reset button state
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
         
         // Add real-time validation
@@ -397,5 +406,35 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(updateFloatingCta, 100);
         });
     }
+    
+    // FAQ Section functionality
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentNode;
+            const faqAnswer = faqItem.querySelector('.faq-answer');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQ items
+            faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== this) {
+                    const otherItem = otherQuestion.parentNode;
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    otherQuestion.setAttribute('aria-expanded', 'false');
+                    otherAnswer.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            if (isExpanded) {
+                this.setAttribute('aria-expanded', 'false');
+                faqAnswer.classList.remove('active');
+            } else {
+                this.setAttribute('aria-expanded', 'true');
+                faqAnswer.classList.add('active');
+            }
+        });
+    });
     
 }); 
