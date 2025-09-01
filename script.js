@@ -437,4 +437,145 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Reviews infinite scrolling animation
+    const reviewsTrack = document.getElementById('reviewsTrack');
+    const reviewsContainer = document.querySelector('.reviews-container');
+    
+    if (reviewsTrack && typeof gsap !== 'undefined') {
+        // Calculate the width of one complete set of reviews (now 9 unique reviews)
+        const reviewCards = reviewsTrack.querySelectorAll('.review-card');
+        const totalCards = reviewCards.length;
+        const uniqueReviews = totalCards / 2; // We have duplicates, so divide by 2
+        const cardWidth = 350;
+        const gap = 30;
+        const oneSetWidth = (cardWidth + gap) * uniqueReviews;
+        
+        // Create truly seamless infinite scrolling using modulus
+        gsap.set(reviewsTrack, { x: 0 });
+        
+        // Use a continuous animation that wraps seamlessly
+        const scrollAnimation = gsap.to(reviewsTrack, {
+            x: -oneSetWidth,
+            duration: 60, // Increased from 40 to 60 seconds for slower scrolling
+            ease: "none",
+            repeat: -1,
+            modifiers: {
+                x: function(x) {
+                    // This creates seamless wrapping without jumps
+                    return (parseFloat(x) % oneSetWidth) + "px";
+                }
+            }
+        });
+        
+        // Pause on hover
+        if (reviewsContainer) {
+            reviewsContainer.addEventListener('mouseenter', () => {
+                scrollAnimation.pause();
+            });
+            
+            reviewsContainer.addEventListener('mouseleave', () => {
+                scrollAnimation.resume();
+            });
+        }
+        
+        // Enhanced mobile touch interaction
+        let touchHoldTimer = null;
+        let isHolding = false;
+        let startX = 0;
+        let isDragging = false;
+        
+        // Touch start - begin hold detection
+        reviewsContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = false;
+            isHolding = false;
+            
+            // Start hold timer (500ms to detect hold)
+            touchHoldTimer = setTimeout(() => {
+                isHolding = true;
+                scrollAnimation.pause();
+            }, 500);
+        });
+        
+        // Touch move - detect if user is dragging/scrolling
+        reviewsContainer.addEventListener('touchmove', (e) => {
+            if (Math.abs(e.touches[0].clientX - startX) > 10) {
+                isDragging = true;
+                // Cancel hold detection if user is scrolling
+                if (touchHoldTimer) {
+                    clearTimeout(touchHoldTimer);
+                    touchHoldTimer = null;
+                }
+            }
+        });
+        
+        // Touch end - resume animation based on interaction type
+        reviewsContainer.addEventListener('touchend', () => {
+            // Clear hold timer
+            if (touchHoldTimer) {
+                clearTimeout(touchHoldTimer);
+                touchHoldTimer = null;
+            }
+            
+            // Resume animation after delay
+            setTimeout(() => {
+                if (!isDragging && !isHolding) {
+                    // Quick tap - brief pause then resume
+                    setTimeout(() => scrollAnimation.resume(), 500);
+                } else if (isHolding) {
+                    // Was holding - longer pause then resume
+                    setTimeout(() => scrollAnimation.resume(), 2000);
+                } else {
+                    // Was dragging - immediate resume
+                    scrollAnimation.resume();
+                }
+                isDragging = false;
+                isHolding = false;
+            }, 100);
+        });
+        
+        // Touch cancel - cleanup
+        reviewsContainer.addEventListener('touchcancel', () => {
+            if (touchHoldTimer) {
+                clearTimeout(touchHoldTimer);
+                touchHoldTimer = null;
+            }
+            isHolding = false;
+            isDragging = false;
+            scrollAnimation.resume();
+        });
+        
+    } else if (reviewsTrack) {
+        // Fallback CSS animation if GSAP is not available
+        reviewsTrack.style.animation = 'scroll-reviews 60s linear infinite';
+        
+        // Add CSS keyframes for fallback
+        const reviewCards = reviewsTrack.querySelectorAll('.review-card');
+        const totalCards = reviewCards.length;
+        const uniqueReviews = totalCards / 2; // We have duplicates, so divide by 2
+        const cardWidth = 350;
+        const gap = 30;
+        const oneSetWidth = (cardWidth + gap) * uniqueReviews;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes scroll-reviews {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-${oneSetWidth}px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Pause on hover fallback
+        if (reviewsContainer) {
+            reviewsContainer.addEventListener('mouseenter', () => {
+                reviewsTrack.style.animationPlayState = 'paused';
+            });
+            
+            reviewsContainer.addEventListener('mouseleave', () => {
+                reviewsTrack.style.animationPlayState = 'running';
+            });
+        }
+    }
+    
 }); 
