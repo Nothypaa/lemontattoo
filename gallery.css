@@ -188,10 +188,15 @@ body {
     box-shadow: 0 8px 25px rgba(255, 217, 0, 0.2);
 }
 
+.gallery-item {
+    aspect-ratio: 4 / 5;
+}
+
 .gallery-item img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
+    object-position: center center;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -229,9 +234,6 @@ body {
         gap: 15px;
     }
     
-    .gallery-item img {
-        height: 250px;
-    }
     
     .gallery-section {
         padding: 60px 5vw;
@@ -262,9 +264,6 @@ body {
         gap: 10px;
     }
     
-    .gallery-item img {
-        height: 200px;
-    }
 
     .breadcrumb {
         padding: 90px 3vw 15px;
