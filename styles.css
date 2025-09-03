@@ -1108,6 +1108,14 @@ body {
     opacity: 0;
     transform: scale(0.8);
     pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tattoo-item:not(.hidden) {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Sketchbook Page */
@@ -1381,6 +1389,26 @@ body {
     .artist-tab {
         min-width: 200px;
         justify-content: center;
+        /* Ensure proper touch events on mobile */
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(255, 217, 0, 0.2);
+    }
+    
+    /* Ensure portfolio items are properly displayed on mobile */
+    .tattoo-item {
+        display: block;
+    }
+    
+    /* Mobile-specific hidden state - less aggressive than display: none */
+    .tattoo-item.hidden {
+        opacity: 0;
+        transform: scale(0.8);
+        pointer-events: none;
+        /* Only collapse height on mobile after animation */
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
     }
 }
 

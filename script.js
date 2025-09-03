@@ -77,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (tabs.length > 0) {
         tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
+            // Add both click and touchend events for better mobile support
+            const handleTabClick = function(e) {
+                e.preventDefault();
                 const targetArtist = this.getAttribute('data-artist');
                 
                 // Remove active class from all tabs
@@ -90,13 +92,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     const itemArtist = item.getAttribute('data-artist');
                     
                     if (targetArtist === 'all' || itemArtist === targetArtist) {
-                        item.classList.remove('hidden');
+                        // Reset display first, then remove hidden for smooth transition
+                        item.style.display = 'block';
+                        // Use requestAnimationFrame to ensure display is set before animation
+                        requestAnimationFrame(() => {
+                            item.classList.remove('hidden');
+                        });
                     } else {
                         item.classList.add('hidden');
+                        // Only set display none after animation completes for mobile
+                        if (window.innerWidth <= 480) {
+                            setTimeout(() => {
+                                if (item.classList.contains('hidden')) {
+                                    item.style.display = 'none';
+                                }
+                            }, 350); // Slightly longer than CSS transition
+                        }
                     }
                 });
                 
-            });
+                // Force reflow on mobile to ensure proper display
+                if (window.innerWidth <= 480) {
+                    setTimeout(() => {
+                        const portfolioGrid = document.querySelector('.portfolio-grid');
+                        if (portfolioGrid) {
+                            portfolioGrid.style.display = 'none';
+                            portfolioGrid.offsetHeight; // Force reflow
+                            portfolioGrid.style.display = 'grid';
+                        }
+                    }, 100);
+                }
+            };
+            
+            tab.addEventListener('click', handleTabClick);
+            tab.addEventListener('touchend', handleTabClick);
         });
     }
     
