@@ -101,26 +101,5 @@
         </image:image>
     </url>
     
-    <!-- Important Image Assets for SEO -->
-    <url>
-        <loc>https://www.lemontattoo.fr/Art/</loc>
-        <lastmod>2025-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.lemontattoo.fr/staff/</loc>
-        <lastmod>2025-08-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.lemontattoo.fr/about-us/</loc>
-        <lastmod>2025-08-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
     
 </urlset>
