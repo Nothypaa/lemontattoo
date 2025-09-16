@@ -57,7 +57,7 @@ body {
 }
 
 .navbar-logo-img {
-    width: 80px;
+    width: 60px;
     height: auto;
     filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
 }
@@ -279,6 +279,23 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
+/* Animation trigger classes */
+.animate-trigger {
+    /* Elements with this class will have their animations triggered on scroll */
+}
+
+.animate-trigger.animate-play .highlighted-word-underline::before {
+    animation-play-state: running !important;
+}
+
+.animate-trigger.animate-play .highlighted-word-underline-curvy::before {
+    animation-play-state: running !important;
+}
+
+.animate-trigger.animate-play {
+    animation-play-state: running !important;
+}
+
 /* Entrance animation classes */
 .navbar-logo-enter {
   opacity: 0;
@@ -365,6 +382,7 @@ body {
     text-align: left;
     opacity: 0;
     animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s both;
+    animation-play-state: paused; /* Start paused until scrolled into view */
     max-width: 90vw;
 }
 
@@ -402,6 +420,7 @@ body {
     z-index: -1;
     opacity: 0;
     animation: drawCircle 1.2s ease-out 0.8s both;
+    animation-play-state: paused; /* Start paused until scrolled into view */
 }
 
 /* Highlighted word styling for portfolio section */
@@ -426,6 +445,7 @@ body {
     z-index: -1;
     opacity: 0;
     animation: underlineGrow 1s ease-out 0.4s forwards;
+    animation-play-state: paused; /* Start paused until scrolled into view */
     box-shadow: 2px 1px 0 #FFD700, -1px 2px 0 #FFD700, 3px -1px 0 #FFD700, -2px 1px 0 #FFD700;
 }
 
@@ -536,7 +556,7 @@ body {
     white-space: nowrap;
     border-right: 2px solid #FFD700;
     width: 0;
-    animation: typing 3s steps(35, end) 2s forwards, blink 0.75s step-end infinite 2s, removeCursor 0.1s 5.5s forwards;
+    animation: typing 2s steps(35, end) 0.5s forwards, blink 0.75s step-end infinite 0.5s, removeCursor 0.1s 3s forwards;
 }
 
 /* Waze Icon Styling */
@@ -587,6 +607,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease-out 2s both;
+    animation-play-state: paused; /* Start paused until scrolled into view */
 }
 
 .hero-cta-button:hover {
@@ -829,7 +850,7 @@ body {
     
     /* Mobile typewriter animation adjustments */
     .animated-text {
-        animation: typing 2.5s steps(35, end) 2s forwards, blink 0.75s step-end infinite 2s, removeCursor 0.1s 5s forwards;
+        animation: typing 1.8s steps(35, end) 0.5s forwards, blink 0.75s step-end infinite 0.5s, removeCursor 0.1s 2.8s forwards;
     }
     
     /* Mobile CTA button adjustments */
@@ -838,6 +859,7 @@ body {
         padding: 0.8rem 1.5rem;
         margin-top: 2.5rem;
         animation: fadeInUp 0.6s ease-out 1.5s both;
+        animation-play-state: paused; /* Start paused until scrolled into view */
     }
     
     /* Mobile reviews adjustments */
@@ -1068,12 +1090,12 @@ body {
     gap: 8px;
     background: #FFD900;
     color: #000;
-    padding: 14px 28px;
+    padding: 18px 36px;
     border-radius: 30px;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(255, 217, 0, 0.3);
 }
@@ -1557,13 +1579,14 @@ body {
     margin-bottom: 60px; /* Reduced margin */
     opacity: 0;
     transform: translateY(60px);
-    animation: fadeInUpTimeline 0.8s ease-out forwards;
+    animation: fadeInUpTimeline 0.5s ease-out forwards;
+    animation-play-state: paused; /* Start paused until scrolled into view */
     z-index: 2; /* Ensures item is above the line */
 }
 
-.timeline-item:nth-child(2) { animation-delay: 0.8s; }
-.timeline-item:nth-child(3) { animation-delay: 1.2s; }
-.timeline-item:nth-child(4) { animation-delay: 1.6s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.4s; }
+.timeline-item:nth-child(4) { animation-delay: 0.6s; }
 
 /* Timeline Year Circles */
 .timeline-year {
@@ -1582,12 +1605,12 @@ body {
     justify-content: center;
     box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
     opacity: 0;
-    animation: bounceInYear 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    animation: bounceInYear 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
-.timeline-item:nth-child(2) .timeline-year { animation-delay: 0.9s; }
-.timeline-item:nth-child(3) .timeline-year { animation-delay: 1.3s; }
-.timeline-item:nth-child(4) .timeline-year { animation-delay: 1.7s; }
+.timeline-item:nth-child(2) .timeline-year { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) .timeline-year { animation-delay: 0.5s; }
+.timeline-item:nth-child(4) .timeline-year { animation-delay: 0.7s; }
 
 .timeline-year span {
     font-family: 'Inter', sans-serif;
@@ -1924,6 +1947,7 @@ body {
     z-index: -1;
     opacity: 0;
     animation: underlineGrowCurvy 1s ease-out 0.4s forwards;
+    animation-play-state: paused; /* Start paused until scrolled into view */
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
 }
 

@@ -606,5 +606,36 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    
-}); 
+
+    // Intersection Observer for triggering animations on scroll
+    function initAnimationTriggers() {
+        // Observer options
+        const observerOptions = {
+            root: null,
+            rootMargin: '-10% 0px -10% 0px', // Trigger when 10% of element is visible
+            threshold: 0.2
+        };
+
+        // Create the observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the animate-play class to trigger animations
+                    entry.target.classList.add('animate-play');
+                    // Stop observing once triggered (one-time animation)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-trigger class
+        const animateElements = document.querySelectorAll('.animate-trigger');
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // Initialize animation triggers
+    initAnimationTriggers();
+
+});
