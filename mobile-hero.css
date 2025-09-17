@@ -1,10 +1,10 @@
 /* Mobile Hero Section Modifications */
 
-/* Reduce hero height on mobile devices */
+/* Keep full viewport height on mobile to prevent grey areas */
 @media (max-width: 768px) {
     .hero {
-        height: 90vh; /* Increased from 70vh to give more space */
-        min-height: 600px; /* Ensure minimum height for content */
+        height: 100vh; /* Keep full viewport height */
+        min-height: 100vh; /* Ensure full coverage */
     }
     
     .hero-content {
@@ -26,12 +26,12 @@
 
 @media (max-width: 480px) {
     .hero {
-        height: 85vh; /* Increased from 65vh for better mobile experience */
-        min-height: 550px;
+        height: 100vh; /* Keep full viewport height */
+        min-height: 100vh; /* Ensure full coverage */
     }
     
     .hero-content {
-        transform: translateY(-45%); /* Slightly higher positioning */
+        transform: translateY(-50%); /* Center content properly */
     }
     
     .hero-cta-button {
