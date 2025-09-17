@@ -7,7 +7,8 @@ footer {
     padding: 60px 5vw;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 3rem;
     font-family: 'Inter', sans-serif;
     border-top: 1px solid rgba(255, 215, 0, 0.2);
     backdrop-filter: blur(15px); /* Matching navbar */
@@ -23,7 +24,7 @@ footer::after {
     right: 5%; /* Moved to the right side of the page */
     width: 400px; /* Reduced to 400px as requested */
     height: 400px; /* Reduced to 400px as requested */
-    background-image: url('footer-sketch/lionsketch.jpg');
+    background-image: url('footer-sketch/lion-sketch-artistique-lemontattoo-castelnau-le-lez.jpg');
     background-size: 400px auto; /* Adjusted size for better face visibility */
     background-position: 35% 45%; /* Adjusted to center the lion face properly */
     background-repeat: no-repeat;
@@ -43,7 +44,7 @@ footer::after {
 .footer-left {
     flex: 1;
     text-align: left;
-    max-width: 50%;
+    max-width: 40%;
     position: relative;
     z-index: 3;
 }
@@ -150,10 +151,51 @@ footer::after {
     text-align: right;
 }
 
+/* Footer Center - Navigation */
+.footer-center {
+    flex: 1;
+    text-align: left;
+    max-width: 30%;
+    position: relative;
+    z-index: 3;
+}
+
+.footer-nav-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFD700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.footer-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.3rem 0;
+    transition: all 0.3s ease;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+}
+
+.footer-nav-link:hover {
+    color: #FFD700;
+    border-left-color: #FFD700;
+    transform: translateX(5px);
+}
+
 .footer-right {
     flex: 1;
     text-align: right;
-    max-width: 50%;
+    max-width: 30%;
     position: relative;
     z-index: 3;
     display: flex;
@@ -246,11 +288,16 @@ footer::after {
     }
     
     .footer-left,
+    .footer-center,
     .footer-right {
         max-width: 100%;
         text-align: left;
     }
-    
+
+    .footer-center {
+        margin-top: 2rem;
+    }
+
     .footer-right {
         margin-top: 2rem;
         text-align: left;

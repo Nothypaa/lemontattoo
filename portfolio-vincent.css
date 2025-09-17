@@ -1,0 +1,444 @@
+/* Portfolio Vincent Page Styles */
+
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Fixed navbar consistent with gallery page */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5vw;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 100px 5vw 20px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb-link {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #FFD700;
+}
+
+.breadcrumb-separator {
+    color: #999999;
+    font-weight: bold;
+}
+
+.breadcrumb-current {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+/* Vincent Portfolio Section */
+.vincent-portfolio {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    padding: 80px 5vw;
+    min-height: 100vh;
+}
+
+.artist-profile {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.artist-photo-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.1);
+}
+
+.artist-main-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artist-photo-container:hover .artist-main-photo {
+    transform: scale(1.02);
+}
+
+.artist-details {
+    padding-left: 2rem;
+}
+
+.artist-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.artist-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.artist-styles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.style-tag {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.artist-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.instagram-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(45deg, #E4405F, #F77737, #FCAF45);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(228, 64, 95, 0.3);
+}
+
+.instagram-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+}
+
+.instagram-cta svg {
+    fill: currentColor;
+}
+
+/* Portfolio Grid within Vincent Portfolio Section */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+    background: #1a1a1a;
+    aspect-ratio: 4 / 5;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.25);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: scale(1.1);
+}
+
+#modalImage {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .vincent-portfolio {
+        padding: 60px 5vw;
+    }
+
+    .artist-profile {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .artist-details {
+        padding-left: 0;
+    }
+
+    .artist-name {
+        font-size: 3rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vincent-portfolio {
+        padding: 60px 5vw;
+    }
+
+    .artist-profile {
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .artist-name {
+        font-size: 2.5rem;
+    }
+
+    .artist-title {
+        font-size: 1.1rem;
+    }
+
+    .artist-bio {
+        font-size: 1rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+    }
+
+    .breadcrumb {
+        padding: 100px 4vw 20px;
+    }
+
+    .modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+
+    .modal-close {
+        top: -40px;
+        right: -5px;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    #modalImage {
+        max-height: 75vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .artist-name {
+        font-size: 2rem;
+    }
+
+    .artist-styles {
+        justify-content: center;
+    }
+
+    .style-tag {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .instagram-cta {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .breadcrumb {
+        padding: 90px 3vw 15px;
+    }
+
+    .modal-close {
+        top: -35px;
+        font-size: 1.8rem;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Animation initial states for GSAP - ensure items are visible by default */
+.portfolio-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Only apply animation overrides when GSAP is actively animating */
+.gsap-animating .portfolio-item {
+    opacity: 0;
+    transform: translateY(30px); /* Reduced from 50px to match JS animation */
+}
+
+/* CSS fallback animation for when GSAP is not available */
+.no-gsap .portfolio-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure images are always displayed */
+.portfolio-item img {
+    opacity: 1 !important;
+    display: block !important;
+}
+
+.artist-photo-container,
+.artist-details {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}

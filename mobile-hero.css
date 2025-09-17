@@ -3,8 +3,8 @@
 /* Reduce hero height on mobile devices */
 @media (max-width: 768px) {
     .hero {
-        height: 70vh; /* Reduced from 100vh */
-        min-height: 500px; /* Ensure minimum height for content */
+        height: 90vh; /* Increased from 70vh to give more space */
+        min-height: 600px; /* Ensure minimum height for content */
     }
     
     .hero-content {
@@ -26,8 +26,8 @@
 
 @media (max-width: 480px) {
     .hero {
-        height: 65vh; /* Even more reduced for smaller screens */
-        min-height: 450px;
+        height: 85vh; /* Increased from 65vh for better mobile experience */
+        min-height: 550px;
     }
     
     .hero-content {

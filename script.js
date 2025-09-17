@@ -5,20 +5,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navbarMenu = document.querySelector('.navbar-menu');
     const navbar = document.querySelector('.navbar');
-    
+
     // Mobile menu toggle
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navbarMenu.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.navbar-link').forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navbarMenu.classList.remove('active');
+    if (hamburger && navbarMenu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
         });
-    });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.navbar-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navbarMenu.classList.remove('active');
+            });
+        });
+    }
     
     // Scroll to Top Button functionality
     const scrollToTopBtn = document.getElementById('scrollToTop');
@@ -47,29 +50,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Scroll to top when button is clicked
-    scrollToTopBtn.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-    });
-    
+    }
+
     // Ensure video starts playing (fallback for autoplay issues)
     const video = document.querySelector('.hero-video');
     if (video) {
         video.play().catch(function(error) {
             console.log('Video autoplay failed:', error);
         });
+
+        // Handle video loading
+        video.addEventListener('loadeddata', function() {
+            console.log('Video loaded successfully');
+        });
+
+        video.addEventListener('error', function(e) {
+            console.error('Video failed to load:', e);
+        });
     }
-    
-    // Handle video loading
-    video.addEventListener('loadeddata', function() {
-        console.log('Video loaded successfully');
-    });
-    
-    video.addEventListener('error', function(e) {
-        console.error('Video failed to load:', e);
-    });
     
     // Portfolio tab functionality
     const tabs = document.querySelectorAll('.artist-tab');
