@@ -1,4 +1,4 @@
-/* Portfolio Vincent Page Styles */
+/* Portfolio Alexandra Page Styles */
 
 /* Base styles */
 body {
@@ -78,8 +78,8 @@ body {
     padding: 0 5vw;
 }
 
-/* Vincent Portfolio Section */
-.vincent-portfolio {
+/* Alexandra Portfolio Section */
+.alexandra-portfolio {
     background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
     padding: 80px 5vw;
     min-height: 100vh;
@@ -185,7 +185,7 @@ body {
     fill: currentColor;
 }
 
-/* Portfolio Grid within Vincent Portfolio Section */
+/* Portfolio Grid within Alexandra Portfolio Section */
 
 .portfolio-grid {
     display: grid;
@@ -293,7 +293,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .vincent-portfolio {
+    .alexandra-portfolio {
         padding: 60px 5vw;
     }
 
@@ -319,7 +319,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .vincent-portfolio {
+    .alexandra-portfolio {
         padding: 60px 5vw;
     }
 

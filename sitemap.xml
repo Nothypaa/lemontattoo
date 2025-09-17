@@ -100,6 +100,62 @@
             <image:caption>Contactez le salon Lemon Tattoo pour vos projets de tatouage artistique à Castelnau-le-Lez</image:caption>
         </image:image>
     </url>
-    
-    
+
+    <!-- Vincent Portfolio Page -->
+    <url>
+        <loc>https://www.lemontattoo.fr/portfolio-vincent-lemontattoo.html</loc>
+        <lastmod>2025-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/staff/vincent-tatoueur-sketch-aquarelle-lemontattoo-castelnau-le-lez.webp</image:loc>
+            <image:title>Vincent - Tatoueur Sketch et Aquarelle Portfolio</image:title>
+            <image:caption>Portfolio complet de Vincent, tatoueur spécialisé en sketch et aquarelle chez Lemon Tattoo Castelnau-le-Lez</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/Art/tatouage-sketch-realiste-vincent-lemontattoo-castelnau-le-lez-01.webp</image:loc>
+            <image:title>Tatouage Sketch Réaliste par Vincent</image:title>
+            <image:caption>Exemple de tatouage sketch réaliste réalisé par Vincent au salon Lemon Tattoo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/Art/tatouage-sketch-aquarelle-vincent-lemontattoo-castelnau-le-lez-04.webp</image:loc>
+            <image:title>Tatouage Sketch Aquarelle par Vincent</image:title>
+            <image:caption>Technique unique d'aquarelle et sketch maîtrisée par Vincent tatoueur professionnel</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/Art/tatouage-portrait-artistique-vincent-lemontattoo-castelnau-le-lez-02.webp</image:loc>
+            <image:title>Portrait Artistique par Vincent</image:title>
+            <image:caption>Portrait artistique noir et gris démontrant l'expertise de Vincent en semi-réalisme</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Alexandra Portfolio Page -->
+    <url>
+        <loc>https://www.lemontattoo.fr/portfolio-alexandra-lemontattoo.html</loc>
+        <lastmod>2025-09-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/staff/alexandra-tatoueuse-brush-japonais-lemontattoo-castelnau-le-lez.webp</image:loc>
+            <image:title>Alexandra - Tatoueuse Brush Style Japonais Portfolio</image:title>
+            <image:caption>Portfolio complet d'Alexandra, tatoueuse spécialisée en brush style japonais chez Lemon Tattoo Castelnau-le-Lez</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/Art/tatouage-brush-japonais-alexandra-lemontattoo-castelnau-le-lez-01.webp</image:loc>
+            <image:title>Tatouage Brush Style Japonais par Alexandra</image:title>
+            <image:caption>Exemple de tatouage brush style japonais réalisé par Alexandra au salon Lemon Tattoo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/Art/tatouage-dragon-japonais-alexandra-lemontattoo-castelnau-le-lez-06.webp</image:loc>
+            <image:title>Dragon Japonais par Alexandra</image:title>
+            <image:caption>Dragon traditionnel japonais maîtrisé par Alexandra tatoueuse professionnelle</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.lemontattoo.fr/Art/tatouage-traditionnel-japonais-alexandra-lemontattoo-castelnau-le-lez-02.webp</image:loc>
+            <image:title>Tatouage Traditionnel Japonais par Alexandra</image:title>
+            <image:caption>Style japonais traditionnel démontrant l'expertise d'Alexandra en art asiatique</image:caption>
+        </image:image>
+    </url>
+
+
 </urlset>
