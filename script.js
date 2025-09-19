@@ -84,9 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
         tabs.forEach(tab => {
             // Add both click and touchend events for better mobile support
             const handleTabClick = function(e) {
-                e.preventDefault();
                 const targetArtist = this.getAttribute('data-artist');
-                
+
+                // If it's Vincent or Alexandra, let the link navigate naturally
+                if (targetArtist === 'vincent' || targetArtist === 'alexandra') {
+                    return; // Don't prevent default, allow navigation
+                }
+
+                e.preventDefault();
+
                 // Remove active class from all tabs
                 tabs.forEach(t => t.classList.remove('active'));
                 // Add active class to clicked tab

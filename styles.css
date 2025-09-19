@@ -905,6 +905,16 @@ body {
     }
 }
 
+/* Breakpoint for iPhone 12 Pro and similar (390px width) */
+@media (max-width: 430px) {
+    .hero-title-mobile {
+        white-space: normal;
+        font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+        line-height: 1.15;
+        letter-spacing: 0.1px;
+    }
+}
+
 @media (max-width: 360px) {
     .hero-title-mobile {
         font-size: clamp(2.3rem, 4.5vw, 3.5rem);
@@ -2101,6 +2111,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 30%;
     transition: transform 0.3s ease;
 }
 
@@ -2180,6 +2191,7 @@ body {
 
 .artist-instagram svg {
     transition: transform 0.3s ease;
+    vertical-align: middle;
 }
 
 .artist-instagram:hover svg {
@@ -2287,6 +2299,228 @@ body {
     
     .artist-specialties li {
         font-size: 0.85rem;
+    }
+}
+
+/* Cross-Promotion Section */
+.cross-promotion-section {
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Portfolio-background-image/salon-tatouage-castelnau-le-lez.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.cross-promotion-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 5vw;
+    text-align: center;
+}
+
+.cross-promotion-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cross-promotion-subtitle {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artist-cross-promo-card {
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.artist-cross-promo-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.artist-cross-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 215, 0, 0.3);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.artist-cross-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.artist-cross-promo-card:hover .artist-cross-photo {
+    border-color: #FFD700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+.artist-cross-promo-card:hover .artist-cross-photo img {
+    transform: scale(1.05);
+}
+
+.artist-cross-info {
+    flex: 1;
+    text-align: left;
+}
+
+.artist-cross-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.artist-cross-title {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.artist-cross-specialties {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.artist-cross-specialties li {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.artist-cross-specialties li::before {
+    content: '•';
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.artist-cross-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.artist-cross-instagram,
+.artist-cross-portfolio-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.artist-cross-instagram {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.artist-cross-instagram:hover {
+    background: #FFD700;
+    color: #000000;
+    border-color: #FFD700;
+    transform: translateY(-2px);
+}
+
+.artist-cross-portfolio-btn {
+    background: transparent;
+    border-color: #FFD700;
+    color: #FFD700;
+}
+
+.artist-cross-portfolio-btn:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .cross-promotion-section {
+        padding: 60px 0;
+    }
+
+    .artist-cross-promo-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .artist-cross-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .artist-cross-info {
+        text-align: center;
+    }
+
+    .artist-cross-name {
+        font-size: 1.5rem;
+    }
+
+    .artist-cross-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cross-promotion-section {
+        padding: 40px 0;
+    }
+
+    .artist-cross-promo-card {
+        padding: 20px 15px;
+        margin: 0 10px;
+    }
+
+    .artist-cross-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .artist-cross-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .artist-cross-instagram,
+    .artist-cross-portfolio-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        justify-content: center;
     }
 }
 
