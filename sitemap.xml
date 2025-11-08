@@ -4,9 +4,10 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     
     <!-- Main Homepage -->
+    <!-- Updated 2025-11-08: Changed "Voir plus" button in "Nos Œuvres" section to link to "Notre Équipe" section (#team) instead of gallery.html -->
     <url>
         <loc>https://www.lemontattoo.fr/</loc>
-        <lastmod>2025-09-16</lastmod>
+        <lastmod>2025-11-08</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
