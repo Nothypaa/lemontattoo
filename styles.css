@@ -2427,6 +2427,7 @@ body {
 @media (max-width: 768px) {
     .cross-promotion-section {
         padding: 60px 0;
+        background-attachment: scroll;
     }
 
     .artist-cross-promo-card {
